@@ -1,0 +1,98 @@
+{% extends "base_public.html" %}
+{% block title%}Index{% endblock %}
+
+{% block hero %}
+  <div class="hero-unit">
+    <h1>SUPERHUB Journey Diary</h1>
+    <p>SuperHub is an open platform for integrated, multi-modal, urban mobility that aims to support YOU in selecting and using ecologically sustainable transport options.</p>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="span6">
+       
+            <form class="form-horizontal" name="join_form" action="" method="post">
+            <fieldset>
+            <legend>Join</legend>
+            
+             <div class="control-group">
+                <label class="control-label" for="first_name">First Name</label>
+                <div class="controls">
+                <input type="text" placeholder="First Name" name="first_name">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="last_name">Last Name</label>
+                <div class="controls">
+                <input type="text" placeholder="Last Name" name="last_name">
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label" for="email">Email</label>
+                <div class="controls">
+                <input type="text" placeholder="Email Address" name="email">
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label" for="password">Password</label>
+                <div class="controls">
+                <input type="password" placeholder="Password" name="password">
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label" for="password_confirmation">Password Confirmation</label>
+                <div class="controls">
+                <input type="password" placeholder="Confirm Password" name="password_confirmation">
+                </div>
+            </div>
+            
+            <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn" name="button" value="join">Join</button>
+            </div>
+            </div>
+            
+            </fieldset>
+            </form>
+
+    </div>
+    
+    <div class="span6">
+
+    
+      
+       <form class="form-horizontal" name="login_form" action="" method="post">
+            <fieldset>
+            <legend>Login</legend>
+            
+            <div class="control-group">
+                <label class="control-label" for="Email">Email</label>
+                <div class="controls">
+                <input type="text" placeholder="Email" name="email">
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label" for="password">Password</label>
+                <div class="controls">
+                <input type="password" placeholder="Password" name="password">
+                </div>
+            </div>
+            
+            <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn" name="button" value="login"><i class="icon-user"></i> Sign In</button>
+            </div>
+            </div>
+        
+        </fieldset>
+            </form>
+       
+
+  </div>
+{% endblock %}
