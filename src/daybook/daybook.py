@@ -1,6 +1,6 @@
 import ConfigParser
 
-from flask import abort, Flask, json, request
+from flask import abort, Flask, json, redirect, render_template, request, url_for
 
 import configuration
 
@@ -9,28 +9,34 @@ app = Flask(__name__)
 configuration.init(app)
 configuration.logs(app)
 
-@app.route('/')
-def api_root():
-    return "Welcome to the DayBook Homepage"
+@app.route('/', methods=['GET', 'POST'])
+def root():
+    if request.method == 'POST':
+        button = request.form['button']
+        if button  == 'join':
+            return redirect(url_for('.diary'))
+        elif button == 'login':
+            return redirect(url_for('.diary'))
+    return render_template('index.html')
 
 @app.route('/diary')
-def api_diary():
+def diary():
     return "VIEW PREVIOUS ENTRIES"
 
 @app.route('/entry')
-def api_entry():
+def entry():
     return "NEW JOURNEY DIARY ENTRY"
 
 @app.route('/join')
-def api_join():
+def join():
     return "JOIN"
 
 @app.route('/login')
-def api_login():
+def ogin():
     return "LOGIN"
 
 @app.route('/logout')
-def api_logout():
+def ogout():
     return "LOGOUT"
     
 @app.errorhandler(404)
