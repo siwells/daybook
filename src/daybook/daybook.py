@@ -1,6 +1,6 @@
 import ConfigParser
 
-from flask import Flask
+from flask import abort, Flask, json, request
 
 import configuration
 
@@ -11,7 +11,6 @@ configuration.logs(app)
 
 @app.route('/')
 def api_root():
-    app.logger.info("hello")
     return "Welcome to the DayBook Homepage"
 
 @app.route('/join')
@@ -25,6 +24,21 @@ def api_login():
 @app.route('/logout')
 def api_logout():
     return "LOGOUT"
+    
+@app.errorhandler(404)
+def status_404(e):
+    msg = {"Method": request.method, "URL":request.url}
+    app.logger.error(json.dumps(msg))
+    return "404", 404
+
+@app.errorhandler(500)
+def status_500(exception):
+    app.logger.exception(exception)
+    return "500", 500
+
+@app.route('/500')
+def raise_500():
+    abort(500)
     
 if __name__ == '__main__':
     app.run(
