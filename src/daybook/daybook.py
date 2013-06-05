@@ -19,6 +19,18 @@ app.logger.addHandler(file_handler)
 @app.route('/')
 def api_root():
     return "Welcome to the DayBook Homepage"
+
+@app.route('/join')
+def api_login():
+    return "JOIN"
+
+@app.route('/login')
+def api_login():
+    return "LOGIN"
+
+@app.route('/logout')
+def api_logout():
+    return "LOGOUT"
     
 if __name__ == '__main__':
     app.run(
