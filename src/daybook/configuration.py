@@ -1,4 +1,5 @@
 import ConfigParser
+
 from flask import Flask
 
 def init(app):
@@ -6,11 +7,15 @@ def init(app):
     try:
         config_location = "etc/defaults.cfg"
         config.read(config_location)
-        app.debug = config.get("daybook", "debug")
-        app.threaded = config.get("daybook", "threaded")
-        app.secret_key = config.get("daybook", "secret_key")
-        app.ip_address = config.get("daybook", "ip_address")
-        app.port = config.get("daybook", "port")
+        
+        app.config['DEBUG'] = config.get("daybook", "debug")
+        app.config['threaded'] = config.get("daybook", "threaded")
+        app.config['SECRET_KEY'] = config.get("daybook", "secret_key")
+        app.config['ip_address'] = config.get("daybook", "ip_address")
+        app.config['port'] = config.get("daybook", "port")
+        app.config['log_file'] = config.get("logging", "name")
+        app.config['log_level'] = config.get("logging", "level")
     except:
         print "Could not read configs from: ", config_location
+
     return config
