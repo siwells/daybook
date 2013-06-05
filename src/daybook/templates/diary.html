@@ -6,16 +6,15 @@
     <div class="span6">
     
     <legend>Diary Entries</legend>   
-    <p>Select an entry:</p>
     
     <form class="form-horizontal">
     
     <div class="control-group">
     
         <div class="control-group">
-        <label class="control-label" for="entries">Entries</label>
+        <label class="control-label" for="entries">Select an entry</label>
             <div class="controls">
-                <select>
+                <select class="input-large">
                     <option>Monday 3rd June 2013</option>
                     <option>Tuesday 4th June 2013</option>
                     <option>Wednesday 5th June 2013</option>
@@ -23,22 +22,51 @@
             </div>
         </div>
 
-        <label class="control-label" for="entries">Origin</label>
+        <div class="control-group">
+            <label class="control-label" for="entries">Origin</label>
             <div class="controls">
-                <input type="text" placeholder="Type something…">
+                <span class="input-large uneditable-input">Some value here</span>
             </div>
         </div>
 
+        <div class="control-group">
+            <label class="control-label" for="entries">Destination</label>
+            <div class="controls">
+                <span class="input-large uneditable-input">Some value here</span>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label" for="entries">Overall Journey Rating</label>
+            <div class="controls">
+                <span class="input-large uneditable-input">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="entries">Travel Mode</label>
+            <div class="controls">
+                <span class="input-large uneditable-input">Some value here</span>
+            </div>
+        </div>
+        
         
         <div class="control-group">
         <label class="control-label" for="entries">Notes</label>
             <div class="controls">
-                <textarea rows="3"></textarea>
+                <textarea rows="10" readonly class="input-large"></textarea>
             </div>
         </div>
 
+    </div>
         
-        </form>
+    </form>
     
 
     </div>
@@ -46,7 +74,7 @@
     <div class="span6">
     
     
-    <legend>New Entries</legend>
+    <legend>Create a new entry</legend>
     
   </div>
 {% endblock %}
