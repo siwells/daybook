@@ -14,6 +14,7 @@ def init(app):
         app.config['ip_address'] = config.get("daybook", "ip_address")
         app.config['port'] = config.get("daybook", "port")
         app.config['log_file'] = config.get("logging", "name")
+        app.config['log_location'] = config.get("logging", "location")
         app.config['log_level'] = config.get("logging", "level")
     except:
         print "Could not read configs from: ", config_location
