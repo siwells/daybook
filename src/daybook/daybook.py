@@ -14,14 +14,15 @@ def root():
     if request.method == 'POST':
         button = request.form['button']
         if button  == 'join':
-            return redirect(url_for('.diary'))
+            return render_template('verify.html')
         elif button == 'login':
-            return redirect(url_for('.diary'))
+            return render_template('diary.html')
+            #return redirect(url_for('.diary'))
     return render_template('index.html')
 
 @app.route('/diary')
 def diary():
-    return "VIEW PREVIOUS ENTRIES"
+    return render_template('diary.html')
 
 @app.route('/entry')
 def entry():
@@ -32,13 +33,13 @@ def join():
     return "JOIN"
 
 @app.route('/login')
-def ogin():
+def login():
     return "LOGIN"
 
 @app.route('/logout')
-def ogout():
+def logout():
     return "LOGOUT"
-    
+
 @app.errorhandler(404)
 def status_404(exception):
     msg = {"Method": request.method, "URL":request.url}
