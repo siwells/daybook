@@ -13,8 +13,16 @@ configuration.logs(app)
 def api_root():
     return "Welcome to the DayBook Homepage"
 
+@app.route('/diary')
+def api_diary():
+    return "VIEW PREVIOUS ENTRIES"
+
+@app.route('/entry')
+def api_entry():
+    return "NEW JOURNEY DIARY ENTRY"
+
 @app.route('/join')
-def api_login():
+def api_join():
     return "JOIN"
 
 @app.route('/login')
@@ -26,19 +34,18 @@ def api_logout():
     return "LOGOUT"
     
 @app.errorhandler(404)
-def status_404(e):
+def status_404(exception):
     msg = {"Method": request.method, "URL":request.url}
     app.logger.error(json.dumps(msg))
+    app.logger.exception(exception)
     return "404", 404
 
 @app.errorhandler(500)
 def status_500(exception):
+    msg = {"Method": request.method, "URL":request.url}
+    app.logger.error(json.dumps(msg))
     app.logger.exception(exception)
     return "500", 500
-
-@app.route('/500')
-def raise_500():
-    abort(500)
     
 if __name__ == '__main__':
     app.run(
