@@ -26,7 +26,7 @@ def diary():
 
 @app.route('/entry')
 def entry():
-    return "NEW JOURNEY DIARY ENTRY"
+	return render_template('entry.html')
 
 @app.route('/join')
 def join():
