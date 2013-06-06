@@ -1,10 +1,10 @@
-{% extends "base_public.html" %}
+{% extends "base_private.html" %}
 {% block title%}Your Journey Diary{% endblock %}
 
 {% block content %}
     
     <div class="page-header">
-    <h1>Your Journey Diary <small>Review existing entries</small></h1>
+    <h1>Your Journey Diary <small>Add a new entry</small></h1>
     </div>
     
   <div class="row">
@@ -15,34 +15,30 @@
     <div class="control-group">
     
         <div class="control-group">
-        <label class="control-label" for="entries">Select a journey</label>
+            <label class="control-label" for="entries">Date</label>
             <div class="controls">
-                <select class="input-large">
-                    <option>Monday 3rd June 2013</option>
-                    <option>Tuesday 4th June 2013</option>
-                    <option>Wednesday 5th June 2013</option>
-                </select>
+                <span class="input-large">Some value here</span>
             </div>
         </div>
 
         <div class="control-group">
             <label class="control-label" for="entries">Origin</label>
             <div class="controls">
-                <span class="input-large uneditable-input">Some value here</span>
+                <span class="input-large">Some value here</span>
             </div>
         </div>
 
         <div class="control-group">
             <label class="control-label" for="entries">Destination</label>
             <div class="controls">
-                <span class="input-large uneditable-input">Some value here</span>
+                <span class="input-large">Some value here</span>
             </div>
         </div>
         
         <div class="control-group">
             <label class="control-label" for="entries">Overall Journey Rating</label>
             <div class="controls">
-                <span class="input-large uneditable-input">
+                <span class="input-large">
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
@@ -55,7 +51,7 @@
         <legend>Journey Legs</legend>
         
         <div class="control-group">
-        <label class="control-label" for="entries">Select a Leg</label>
+        <label class="control-label" for="entries">Select a leg</label>
             <div class="controls">
                 <select class="input-large">
                     <option>1</option>
