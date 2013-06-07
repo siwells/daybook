@@ -12,6 +12,8 @@ configuration.logs(app)
 @app.route('/', methods=['GET', 'POST'])
 def root():
     if request.method == 'POST':
+        print request.method, request.path
+        print request.form
         button = request.form['button']
         if button  == 'join':
             return render_template('verify.html')
@@ -24,8 +26,11 @@ def root():
 def diary():
     return render_template('diary.html')
 
-@app.route('/entry')
+@app.route('/entry', methods=['GET', 'POST'])
 def entry():
+	if request.method == 'POST':
+		print request.method, request.path
+		print request.form
 	return render_template('entry.html')
 
 @app.route('/join')
