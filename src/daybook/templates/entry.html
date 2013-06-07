@@ -15,7 +15,7 @@
     	 	else
 		 	{
         	  	var newdiv = document.createElement('div');
-				newdiv.innerHTML = '<legend>Leg' + (counter + 1) +'</legend><div class="control-group"><label class="control-label" for="entries">Travel Mode for this leg</label><div class="controls"><select class="input input-block-level"><option>Car</option><option>Walk</option><option>Cycle</option></select></div></div><div class="control-group"><label class="control-label" for="entries">Rating for this leg</label><div class="input-append"><div class="controls"><select class="input-small"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><span class="add-on"><i class="icon-star"></i></span></div></div></div>'
+				newdiv.innerHTML = '<legend>Leg' + (counter + 1) +'</legend><div class="control-group"><label class="control-label" for="entries">Travel Mode for this leg</label><div class="controls"><select class="input input-block-level" name="mode_'+ (counter+1) +'"><option>Car</option><option>Walk</option><option>Cycle</option></select></div></div><div class="control-group"><label class="control-label" for="entries">Rating for this leg</label><div class="input-append"><div class="controls"><select class="input-small" name="rating_'+ (counter+1) +'"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><span class="add-on"><i class="icon-star"></i></span></div></div></div>'
 	          	document.getElementById(divName).appendChild(newdiv);
     	      	counter++;
 	     	}
@@ -37,8 +37,8 @@
 
     <div class="span8 offset2">   
     
-    <form class="form-horizontal">
-    
+    <form class="form-horizontal" name="entry_form" action="" method="post">
+   <!-- <fieldset>-->
     <div class="control-group">
 
 	
@@ -46,29 +46,29 @@
         <div class="control-group">
             <label class="control-label" for="entries">Date</label>
             <div class="controls">
-        		<input class="input-block-level" type="text" placeholder="the date of your journey">
+        		<input class="input-block-level" type="text" placeholder="the date of your journey" name="date">
 			</div>
         </div>
 
         <div class="control-group">
             <label class="control-label" for="entries">Origin</label>
             <div class="controls">
-           		<input class="input-block-level" type="text" placeholder="where your journey started">    
+           		<input class="input-block-level" type="text" placeholder="where your journey started" name="origin">    
 			</div>
         </div>
 
         <div class="control-group">
             <label class="control-label" for="entries">Destination</label>
             <div class="controls">
-            	<input class="input-block-level" type="text" placeholder="where your journey ended">
+            	<input class="input-block-level" type="text" placeholder="where your journey ended" name="destination">
 			</div>
         </div>
 
 		<div class="control-group">
-        <label class="control-label" for="entries">Rate your journey overall</label>
+        <label class="control-label" for="overall_rating">Rate your journey overall</label>
 			<div class="input-append">
             	<div class="controls">
-                	<select class="input-small">
+                	<select class="input-small" name="overall_rating">
 	                    <option>1</option>
     	                <option>2</option>
         	            <option>3</option>
@@ -89,12 +89,12 @@
 			</div>
 		</div>
 
-		<div class="offset2" id="dynamicInput">
+		<div class="offset1" id="dynamicInput">
 			<legend>Leg 1</legend>
 				<div class="control-group">
 		        	<label class="control-label" for="entries">Travel Mode for this leg</label>
 		            <div class="controls">
-	    	            <select class="input input-block-level">
+	    	            <select class="input input-block-level" name="mode_1">
 	        	            <option>Car</option>
     	        	        <option>Walk</option>
         	        	    <option>Cycle</option>
@@ -103,10 +103,10 @@
 		        </div> 
 
 	       		<div class="control-group">
-    	        	<label class="control-label" for="entries">Rating for this leg</label>
+    	        	<label class="control-label" for="rating_1">Rating for this leg</label>
 	    	        <div class="input-append">
     	    	    	<div class="controls">
-        	    	    	<select class="input-small">
+        	    	    	<select class="input-small" name="rating_1">
 	        	    	        <option>1</option>
     	        	    	    <option>2</option>
         	        	    	<option>3</option>
@@ -125,16 +125,17 @@
 		<div class="control-group">
         	<label class="control-label" for="entries">Notes about your journey</label>
 	        <div class="controls">
-				<textarea rows="15" class="input-block-level"></textarea>
+				<textarea rows="15" class="input-block-level" name="notes"></textarea>
         	</div>
 	    </div>
 
 		<div class="control-group">
     	    <label class="control-label" for="entries">Add this entry to your journey diary</label>
         	<div class="controls">
-				<button class="btn btn-large btn-primary pull-right" type="button">Add Entry</button>
+				<button class="btn btn-large btn-primary pull-right" type="submit"  type="submit" name="button" value="login">Add Entry</button>
 			</div>
 		</div>
+<!--	</fieldset>-->
 	</form>
 	</div>
   </div>
