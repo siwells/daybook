@@ -24,7 +24,41 @@ def root():
 
 @app.route('/diary')
 def diary():
-    return render_template('diary.html')
+    diary_entries = [
+        {
+            "date": "Friday 7th June 2013", 
+            "destination": "home", 
+            "legs": [
+                {
+                    "leg_rating": "1", 
+                    "mode": "m", 
+                    "no": "n"
+                }
+            ], 
+            "notes": "the quick", 
+            "origin": "away", 
+            "overall_rating": "5"
+        },
+        {
+            "date": "Saturday 8th June 2013", 
+            "destination": "away", 
+            "legs": [
+                {
+                    "leg_rating": "2", 
+                    "mode": "m", 
+                    "no": "n"
+                }
+            ], 
+            "notes": "brown fox", 
+            "origin": "home", 
+            "overall_rating": "3"
+        }
+
+    ]
+    
+    print diary_entries
+    print json.dumps(diary_entries)
+    return render_template('diary.html', diary_entries = diary_entries, diary = json.dumps(diary_entries))
 
 @app.route('/entry', methods=['GET', 'POST'])
 def entry():
