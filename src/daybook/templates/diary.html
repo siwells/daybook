@@ -1,4 +1,28 @@
 {% extends "base_private.html" %}
+
+{% block scripts %} 
+
+	<script language="Javascript" type="text/javascript">
+
+    function run()
+    {
+        var diary = '{{ diary | safe }}';
+        var diary_obj = JSON.parse(diary);
+
+        var data = {"first": "simon"};
+
+        console.log(data.first);
+
+        console.log( diary_obj[0].date );
+        console.log( diary_obj[1].date );
+        console.log(  document.getElementById("date").value );
+/*        alert(JSON.stringify( diary ))*/
+    }
+    
+	</script>
+
+{% endblock %}
+
 {% block title%}Your Journey Diary{% endblock %}
 
 {% block content %}
@@ -14,28 +38,30 @@
     
     <div class="control-group">
     
+        {% set current_entry = diary_entries[0].date %}
+
         <div class="control-group">
         <label class="control-label" for="entries">Select a journey</label>
             <div class="controls">
-                <select class="input-large">
-                    <option>Monday 3rd June 2013</option>
-                    <option>Tuesday 4th June 2013</option>
-                    <option>Wednesday 5th June 2013</option>
+                <select class="input-large" name="date" id="date" onchange="run()">
+                    {% for entry in diary_entries %}
+                    <option value="{{ entry.date }}" > {{ entry.date }} </option>
+                    {% endfor %}
                 </select>
             </div>
         </div>
 
         <div class="control-group">
-            <label class="control-label" for="entries">Origin</label>
+            <label class="control-label" for="entries" name="origin" id="origin">Origin</label>
             <div class="controls">
-                <span class="input-large uneditable-input">Some value here</span>
+                <span class="input-large uneditable-input">{{ diary_entries[0].origin }}</span>
             </div>
         </div>
 
         <div class="control-group">
             <label class="control-label" for="entries">Destination</label>
             <div class="controls">
-                <span class="input-large uneditable-input">Some value here</span>
+                <span class="input-large uneditable-input">{{ diary_entries[0].destination }}</span>
             </div>
         </div>
         
@@ -43,11 +69,11 @@
             <label class="control-label" for="entries">Overall Journey Rating</label>
             <div class="controls">
                 <span class="input-large uneditable-input">
+                    {{ diary_entries[0].overall_rating }}
+<!--                    <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>-->
                 </span>
             </div>
         </div>
