@@ -17,15 +17,16 @@
 /*        console.log( diary_obj[1].date );*/
 /*        console.log(  document.getElementById("date").value );*/
 
-        var current_date = document.getElementById("date").value
+        var current_id = document.getElementById("journey_id").value
 
 /*        alert(JSON.stringify( diary ))*/
         for (var entry in diary_obj)
         {
-            if (diary_obj[entry].date == current_date)
+            if (diary_obj[entry].id == current_id)
             {
                 console.log (diary_obj[entry])
                 
+                document.getElementById("date").value = diary_obj[entry].date
                 document.getElementById("time").value = diary_obj[entry].time
                 document.getElementById("origin").value = diary_obj[entry].origin
                 document.getElementById("destination").value = diary_obj[entry].destination
@@ -56,20 +57,26 @@
     
     <div class="control-group">
     
-        {% set current_entry = diary_entries[0].date %}
-
         <div class="control-group">
         <label class="control-label" for="entries">Select a journey</label>
             <div class="controls">
-                <select class="input-large" name="date" id="date" onchange="run()">
+                <select class="input-large" name="journey_id" id="journey_id" onchange="run()">
                     {% for entry in diary_entries %}
-                    <option value="{{ entry.date }}" > {{ entry.date }} </option>
+                    <option value="{{ entry.id }}" > {{ entry.id }} </option>
                     {% endfor %}
                 </select>
             </div>
         </div>
 
- <div class="control-group">
+         <div class="control-group">
+            <label class="control-label" for="date">Date</label>
+            <div class="controls">
+                <input class="input-large uneditable-input" name="date" id="date" value="{{ diary_entries[0].date }}"</input>
+            </div>
+        </div>
+
+
+        <div class="control-group">
             <label class="control-label" for="time">Time</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="time" id="time" value="{{ diary_entries[0].time }}"</input>
