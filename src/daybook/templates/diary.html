@@ -22,6 +22,7 @@
                 document.getElementById("origin").value = diary_obj[entry].origin
                 document.getElementById("destination").value = diary_obj[entry].destination
                 document.getElementById("overall_rating").value = diary_obj[entry].overall_rating
+                document.getElementById("notes").value = diary_obj[entry].notes 
 
                 var num_legs = diary_obj[entry].legs.length;
 
@@ -168,7 +169,7 @@
     <div class="control-group">
         <label class="control-label" for="entries">Notes</label>
             <div class="controls">
-                <textarea rows="15" readonly class="input-block-level"></textarea>
+                <textarea rows="15" readonly class="input-block-level" name="notes" id="notes">{{ diary_entries[0].notes }}</textarea>
             </div>
         </div>
     
