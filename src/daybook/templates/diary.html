@@ -8,15 +8,6 @@
     {
         var diary = '{{ diary | safe }}';
         var diary_obj = JSON.parse(diary);
-
-        var data = {"first": "simon"};
-
-/*        console.log(data.first);*/
-
-/*        console.log( diary_obj[0].date );*/
-/*        console.log( diary_obj[1].date );*/
-/*        console.log(  document.getElementById("date").value );*/
-
         var current_id = document.getElementById("journey_id").value
 
 /*        alert(JSON.stringify( diary ))*/
@@ -33,10 +24,8 @@
                 document.getElementById("overall_rating").value = diary_obj[entry].overall_rating
 
                 var num_legs = diary_obj[entry].legs.length;
-                /*console.log( "NUM LEGS: " + num_legs );*/
 
                 options = document.getElementById("leg_id")
-                /*console.log( "NUM OPTIONS: " + options.length );*/
                 options.length=0;
                 
                 for (var leg in diary_obj[entry].legs)
@@ -47,10 +36,8 @@
                      option.value = leg;
 
                      options.add(option,null);
-                     /*document.getElementById("leg_id").add(option,null);*/
                 }
                 
-/*                document.getElementById("leg_id").value = diary_obj[entry].legs[0].no*/
                 document.getElementById("leg_mode").value = diary_obj[entry].legs[0].mode
                 document.getElementById("leg_rating").value = diary_obj[entry].legs[0].rating
 
