@@ -110,10 +110,10 @@
         <div class="control-group">
         <label class="control-label" for="legs">Select a Leg</label>
             <div class="controls">
-                <select class="input-large">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
+                <select class="input-large" name="leg_id" id="leg_id">
+                    {% for leg in diary_entries[0].legs %}
+                        <option value="{{ leg.no }}" > {{ leg.no }} </option>
+                    {% endfor %}
                 </select>
             </div>
         </div>
@@ -122,20 +122,14 @@
         <div class="control-group">
             <label class="control-label" for="mode">Travel Mode for this leg</label>
             <div class="controls">
-                <span class="input-large uneditable-input">Some value here</span>
+                <input class="input-large uneditable-input" name="leg_mode" id="leg_mode" value="{{ diary_entries[0].legs[0].mode }}"></input>
             </div>
         </div>
         
         <div class="control-group">
             <label class="control-label" for="leg_rating">Rating for this leg</label>
             <div class="controls">
-                <span class="input-large uneditable-input">
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                    <i class="icon-star"></i>
-                </span>
+                <input class="input-large uneditable-input" name="leg_rating" id="leg_rating" value="{{ diary_entries[0].legs[0].rating }}"></input>
             </div>
         </div>
 
