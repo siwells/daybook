@@ -32,9 +32,14 @@ def diary():
             "destination": "home", 
             "legs": [
                 {
-                    "leg_rating": "1", 
-                    "mode": "m", 
-                    "no": "n"
+                    "rating": "1", 
+                    "mode": "bus", 
+                    "no": "1"
+                },
+                 {
+                    "rating": "5", 
+                    "mode": "bke", 
+                    "no": "2"
                 }
             ], 
             "notes": "the quick", 
@@ -50,7 +55,7 @@ def diary():
                 {
                     "leg_rating": "2", 
                     "mode": "m", 
-                    "no": "n"
+                    "no": "1"
                 }
             ], 
             "notes": "brown fox", 
