@@ -53,7 +53,7 @@ def diary():
             "destination": "away", 
             "legs": [
                 {
-                    "leg_rating": "2", 
+                    "rating": "2", 
                     "mode": "m", 
                     "no": "1"
                 }
