@@ -44,12 +44,13 @@
 
     function select_leg()
     {
-        var current_journey = document.getElementById("journey_id").value
-        var current_leg = document.getElementById("leg_id").value
+        var diary = '{{ diary | safe }}';
+        var diary_obj = JSON.parse(diary);
+        var current_journey = document.getElementById("journey_id").value -1
+        var current_leg = document.getElementById("leg_id").value -1
 
-        console.log( "JOURNEY" + current_journey );
-        console.log( "LEG" + current_leg );
-
+        document.getElementById("leg_mode").value = diary_obj[current_journey].legs[current_leg].mode
+        document.getElementById("leg_rating").value = diary_obj[current_journey].legs[current_leg].rating
 
 
     }
