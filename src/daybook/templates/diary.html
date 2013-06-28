@@ -4,7 +4,7 @@
 
 	<script language="Javascript" type="text/javascript">
 
-    function run()
+    function select_journey()
     {
         var diary = '{{ diary | safe }}';
         var diary_obj = JSON.parse(diary);
@@ -32,9 +32,25 @@
                 document.getElementById("destination").value = diary_obj[entry].destination
                 document.getElementById("overall_rating").value = diary_obj[entry].overall_rating
 
+                document.getElementById("leg_id").value = diary_obj[entry].legs[0].no
+                document.getElementById("leg_mode").value = diary_obj[entry].legs[0].mode
+                document.getElementById("leg_rating").value = diary_obj[entry].legs[0].rating
+
                 break;
             }
         }
+
+    }
+
+    function select_leg()
+    {
+        var current_journey = document.getElementById("journey_id").value
+        var current_leg = document.getElementById("leg_id").value
+
+        console.log( "JOURNEY" + current_journey );
+        console.log( "LEG" + current_leg );
+
+
 
     }
     
@@ -60,7 +76,7 @@
         <div class="control-group">
         <label class="control-label" for="entries">Select a journey</label>
             <div class="controls">
-                <select class="input-large" name="journey_id" id="journey_id" onchange="run()">
+                <select class="input-large" name="journey_id" id="journey_id" onchange="select_journey()">
                     {% for entry in diary_entries %}
                     <option value="{{ entry.id }}" > {{ entry.id }} </option>
                     {% endfor %}
@@ -110,7 +126,7 @@
         <div class="control-group">
         <label class="control-label" for="legs">Select a Leg</label>
             <div class="controls">
-                <select class="input-large" name="leg_id" id="leg_id">
+                <select class="input-large" name="leg_id" id="leg_id" onchange="select_leg()">
                     {% for leg in diary_entries[0].legs %}
                         <option value="{{ leg.no }}" > {{ leg.no }} </option>
                     {% endfor %}
