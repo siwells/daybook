@@ -24,7 +24,7 @@
         {
             if (diary_obj[entry].id == current_id)
             {
-                console.log (diary_obj[entry])
+                /*console.log (diary_obj[entry])*/
                 
                 document.getElementById("date").value = diary_obj[entry].date
                 document.getElementById("time").value = diary_obj[entry].time
@@ -32,7 +32,25 @@
                 document.getElementById("destination").value = diary_obj[entry].destination
                 document.getElementById("overall_rating").value = diary_obj[entry].overall_rating
 
-                document.getElementById("leg_id").value = diary_obj[entry].legs[0].no
+                var num_legs = diary_obj[entry].legs.length;
+                /*console.log( "NUM LEGS: " + num_legs );*/
+
+                options = document.getElementById("leg_id")
+                /*console.log( "NUM OPTIONS: " + options.length );*/
+                options.length=0;
+                
+                for (var leg in diary_obj[entry].legs)
+                {
+                     leg++;
+                     var option = document.createElement("option");
+                     option.text = leg;
+                     option.value = leg;
+
+                     options.add(option,null);
+                     /*document.getElementById("leg_id").add(option,null);*/
+                }
+                
+/*                document.getElementById("leg_id").value = diary_obj[entry].legs[0].no*/
                 document.getElementById("leg_mode").value = diary_obj[entry].legs[0].mode
                 document.getElementById("leg_rating").value = diary_obj[entry].legs[0].rating
 
