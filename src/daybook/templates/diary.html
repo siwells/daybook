@@ -21,6 +21,7 @@
                 document.getElementById("time").value = diary_obj[entry].time
                 document.getElementById("origin").value = diary_obj[entry].origin
                 document.getElementById("destination").value = diary_obj[entry].destination
+                document.getElementById("duration").value = diary_obj[entry].duration
                 document.getElementById("overall_rating").value = diary_obj[entry].overall_rating
                 document.getElementById("notes").value = diary_obj[entry].notes 
 
@@ -118,6 +119,13 @@
             <label class="control-label" for="destination">Destination</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="destination" id="destination" value="{{ diary_entries[0].destination }}"></input>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="duration">Duration</label>
+            <div class="controls">
+                <input class="input-large uneditable-input" name="duration" id="duration" value="{{ diary_entries[0].duration }}"></input>
             </div>
         </div>
         
