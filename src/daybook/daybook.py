@@ -29,7 +29,8 @@ def diary():
             "id":"1",
             "date": "Friday 7th June 2013", 
             "time": "09:00",
-            "destination": "home", 
+            "destination": "home",
+            "duration":"90",
             "legs": [
                 {
                     "rating": "1", 
@@ -50,7 +51,8 @@ def diary():
             "id": "2",
             "date": "Saturday 8th June 2013", 
             "time": "16:00",
-            "destination": "away", 
+            "destination": "away",
+            "duration":"45",
             "legs": [
                 {
                     "rating": "2", 
