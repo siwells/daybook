@@ -26,7 +26,29 @@ def root():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    entry_list = [
+        {
+            "id": "1",
+            "date": "Wednesday, 7th August, 2013"
+        },
+        {
+            "id": "2",
+            "date": "Thursday, 8th August, 2013"
+        },
+        {
+            "id": "3",
+            "date": "Friday, 9th August, 2013"
+        },
+        {
+            "id": "4",
+            "date": "Saturday, 10th August, 2013"
+        }
+    ]
+
+    #print entry_list
+    print json.dumps(entry_list)
+    
+    return render_template('dashboard.html', entry_list = entry_list)
 
 @app.route('/diary')
 def diary():
