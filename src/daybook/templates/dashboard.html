@@ -18,8 +18,11 @@
     
             <p>You have made the following journey diary entries:</p>
 
-            <ul>
+            <ul class="unstyled">
 
+                {% for entry in entry_list %}
+                    <li> {{ entry.id }}: {{ entry.date }} </li>
+                {% endfor %}
 
 
             </ul>
