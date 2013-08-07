@@ -16,7 +16,7 @@
 
     <div class="span8 offset2">   
     
-<form class="form-horizontal" name="login_form" action="" method="post">
+        <form class="form-horizontal" name="login_form" action="" method="post">
             <fieldset>
             <legend>Change Your Password</legend>
             
@@ -47,8 +47,40 @@
             </div>
             </div>
         
-        </fieldset>
-            </form>
+            </fieldset>
+        </form>
+
+
+        <form class="form-horizontal" name="language_form" action="" method="post">
+            <fieldset>
+                <legend>Set your default language</legend>
+                
+                <div class="control-group">
+                    <div class="input-append">
+                        <label class="control-label" for="language">Select a language</label>
+                        <div class="controls">
+                            <select class="input" name="language">
+                                <option>Catalan</option>
+                                <option>English</option>
+                                <option>Italian</option>
+                                <option>Finnish</option>
+                                <option>Spanish</option>
+                            </select>				
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn" name="update_pw_button" value="update_pw_button">Update Language</button>
+            </div>
+            </div>
+
+               
+
+
+            </fieldset>
+        </form>
 
 
 	</div>
