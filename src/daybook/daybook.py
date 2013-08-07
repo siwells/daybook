@@ -126,10 +126,6 @@ def recover():
 
     return render_template('recover.html')
 
-@app.route('/login')
-def login():
-    return "LOGIN"
-
 @app.route('/logout')
 def logout():
     return redirect( url_for('.root') )
