@@ -41,6 +41,7 @@
                 }
                 
                 document.getElementById("leg_mode").value = diary_obj[entry].legs[0].mode
+                document.getElementById("leg_duration").value = diary_obj[entry].legs[0].duration
                 document.getElementById("leg_rating").value = diary_obj[entry].legs[0].rating
 
                 break;
@@ -57,7 +58,9 @@
         var current_leg = document.getElementById("leg_id").value -1
 
         document.getElementById("leg_mode").value = diary_obj[current_journey].legs[current_leg].mode
+        document.getElementById("leg_duration").value = diary_obj[current_journey].legs[current_leg].duration
         document.getElementById("leg_rating").value = diary_obj[current_journey].legs[current_leg].rating
+        
 
 
     }
@@ -156,7 +159,15 @@
                 <input class="input-large uneditable-input" name="leg_mode" id="leg_mode" value="{{ diary_entries[0].legs[0].mode }}"></input>
             </div>
         </div>
-        
+       
+        <div class="control-group">
+            <label class="control-label" for="leg_duration">Duration</label>
+            <div class="controls">
+                <input class="input-large uneditable-input" name="leg_duration" id="leg_duration" value="{{ diary_entries[0].legs[0].duration }}"></input>
+            </div>
+        </div>
+
+
         <div class="control-group">
             <label class="control-label" for="leg_rating">Rating for this leg</label>
             <div class="controls">
