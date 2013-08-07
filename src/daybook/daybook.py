@@ -90,7 +90,7 @@ def verify():
     return render_template('verify.html')
 
 @app.route('/recover', methods=['GET', 'POST'])
-def verify():
+def recover():
     if request.method == 'POST':
         print request.method, request.path
         print request.form
