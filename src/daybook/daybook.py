@@ -112,6 +112,10 @@ def login():
 def logout():
     return redirect( url_for('.root') )
 
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
 @app.errorhandler(404)
 def status_404(exception):
     msg = {"Method": request.method, "URL":request.url}
