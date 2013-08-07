@@ -35,12 +35,14 @@ def diary():
                 {
                     "rating": "1", 
                     "mode": "bus", 
-                    "no": "1"
+                    "no": "1",
+                    "duration": "50"
                 },
                  {
                     "rating": "5", 
                     "mode": "bke", 
-                    "no": "2"
+                    "no": "2",
+                    "duration": "30"
                 }
             ], 
             "notes": "the quick", 
@@ -57,7 +59,8 @@ def diary():
                 {
                     "rating": "2", 
                     "mode": "m", 
-                    "no": "1"
+                    "no": "1",
+                    "duration": "45"
                 }
             ], 
             "notes": "brown fox", 
