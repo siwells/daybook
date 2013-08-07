@@ -85,6 +85,19 @@ def entry():
 def join():
     return "JOIN"
 
+@app.route('/verify')
+def verify():
+    return render_template('verify.html')
+
+@app.route('/recover', methods=['GET', 'POST'])
+def verify():
+    if request.method == 'POST':
+        print request.method, request.path
+        print request.form
+        return render_template('index.html')
+
+    return render_template('recover.html')
+
 @app.route('/login')
 def login():
     return "LOGIN"
