@@ -50,6 +50,22 @@
 
     {% block pagebody %}
 	<div class="container">
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+
+                <div class="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+                </div>
+
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+
 		{% block alerts %}{% endblock %}
 
 		{% block hero %}{% endblock %}

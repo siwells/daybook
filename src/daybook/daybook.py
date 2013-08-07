@@ -1,6 +1,6 @@
 import ConfigParser
 
-from flask import abort, Flask, json, redirect, render_template, request, url_for
+from flask import abort, Flask, flash, json, redirect, render_template, request, url_for
 
 import configuration
 
@@ -94,6 +94,10 @@ def verify():
     if request.method == 'POST':
         print request.method, request.path
         print request.form
+
+        msg = "An email was sent to " + request.form['email'] 
+        flash(msg)
+
         return render_template('index.html')
 
     return render_template('recover.html')
