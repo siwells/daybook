@@ -21,8 +21,12 @@ def root():
             return render_template('index.html')
         elif button == 'login':
             #return render_template('diary.html')
-            return redirect(url_for('.diary'))
+            return redirect(url_for('.dashboard'))
     return render_template('index.html')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 @app.route('/diary')
 def diary():
@@ -96,7 +100,7 @@ def recover():
         msg = "An email was sent to " + request.form['email'] 
         flash(msg)
 
-        return render_template('index.html')
+        return redirect(url_for('.root'))
 
     return render_template('recover.html')
 
