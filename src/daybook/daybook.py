@@ -16,10 +16,12 @@ def root():
         print request.form
         button = request.form['button']
         if button  == 'join':
-            return render_template('verify.html')
+            msg = "An email has been sent to " + request.form['email'] + " so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in."
+            flash(msg)
+            return render_template('index.html')
         elif button == 'login':
-            return render_template('diary.html')
-            #return redirect(url_for('.diary'))
+            #return render_template('diary.html')
+            return redirect(url_for('.diary'))
     return render_template('index.html')
 
 @app.route('/diary')
