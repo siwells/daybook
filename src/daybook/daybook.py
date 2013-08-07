@@ -110,7 +110,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    return "LOGOUT"
+    return redirect( url_for('.root') )
 
 @app.errorhandler(404)
 def status_404(exception):
