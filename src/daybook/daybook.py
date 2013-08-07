@@ -87,10 +87,6 @@ def entry():
 def join():
     return "JOIN"
 
-@app.route('/verify')
-def verify():
-    return render_template('verify.html')
-
 @app.route('/recover', methods=['GET', 'POST'])
 def recover():
     if request.method == 'POST':
