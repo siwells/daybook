@@ -69,12 +69,12 @@
 
 {% endblock %}
 
-{% block title%}Your Journey Diary{% endblock %}
+{% block title%}{{ _('Your Journey Diary') }}{% endblock %}
 
 {% block content %}
     
     <div class="page-header">
-    <h1>Your Journey Diary <small>Review existing entries</small></h1>
+    <h1>{{ _('Your Journey Diary') }} <small>{{ _('Review existing entries') }}</small></h1>
     </div>
     
   <div class="row">
@@ -85,7 +85,7 @@
     <div class="control-group">
     
         <div class="control-group">
-        <label class="control-label" for="entries">Select a journey</label>
+        <label class="control-label" for="entries">{{ _('Select a journey') }}</label>
             <div class="controls">
                 <select class="input-large" name="journey_id" id="journey_id" onchange="select_journey()">
                     {% for entry in diary_entries %}
@@ -96,7 +96,7 @@
         </div>
 
          <div class="control-group">
-            <label class="control-label" for="date">Date</label>
+            <label class="control-label" for="date">{{ _('Date') }}</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="date" id="date" value="{{ diary_entries[0].date }}"></input>
             </div>
@@ -104,7 +104,7 @@
 
 
         <div class="control-group">
-            <label class="control-label" for="time">Time</label>
+            <label class="control-label" for="time">{{ _('Time') }}</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="time" id="time" value="{{ diary_entries[0].time }}"></input>
             </div>
@@ -112,37 +112,37 @@
 
 
         <div class="control-group">
-            <label class="control-label" for="origin">Origin</label>
+            <label class="control-label" for="origin">{{ _('Origin') }}</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="origin" id="origin" value="{{ diary_entries[0].origin }}"></input>
             </div>
         </div>
 
         <div class="control-group">
-            <label class="control-label" for="destination">Destination</label>
+            <label class="control-label" for="destination">{{ _('Destination') }}</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="destination" id="destination" value="{{ diary_entries[0].destination }}"></input>
             </div>
         </div>
 
         <div class="control-group">
-            <label class="control-label" for="duration">Duration</label>
+            <label class="control-label" for="duration">{{ _('Duration') }}</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="duration" id="duration" value="{{ diary_entries[0].duration }}"></input>
             </div>
         </div>
         
         <div class="control-group">
-            <label class="control-label" for="overall_rating">Overall Journey Rating</label>
+            <label class="control-label" for="overall_rating">{{ _('Overall Journey Rating') }}</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="overall_rating" id="overall_rating" value="{{ diary_entries[0].overall_rating }}"></input>
             </div>
         </div>
         
-        <legend>Journey Legs</legend>
+        <legend>{{ _('Journey Legs') }}</legend>
         
         <div class="control-group">
-        <label class="control-label" for="legs">Select a Leg</label>
+        <label class="control-label" for="legs">{{ _('Select a Leg') }}</label>
             <div class="controls">
                 <select class="input-large" name="leg_id" id="leg_id" onchange="select_leg()">
                     {% for leg in diary_entries[0].legs %}
@@ -154,14 +154,14 @@
 
 
         <div class="control-group">
-            <label class="control-label" for="mode">Travel Mode for this leg</label>
+            <label class="control-label" for="mode">{{ _('Travel Mode for this leg') }}</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="leg_mode" id="leg_mode" value="{{ diary_entries[0].legs[0].mode }}"></input>
             </div>
         </div>
        
         <div class="control-group">
-            <label class="control-label" for="leg_duration">Duration</label>
+            <label class="control-label" for="leg_duration">{{ _('Duration') }}</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="leg_duration" id="leg_duration" value="{{ diary_entries[0].legs[0].duration }}"></input>
             </div>
@@ -169,7 +169,7 @@
 
 
         <div class="control-group">
-            <label class="control-label" for="leg_rating">Rating for this leg</label>
+            <label class="control-label" for="leg_rating">{{ _('Rating for this leg') }}</label>
             <div class="controls">
                 <input class="input-large uneditable-input" name="leg_rating" id="leg_rating" value="{{ diary_entries[0].legs[0].rating }}"></input>
             </div>
@@ -186,7 +186,7 @@
     
     
     <div class="control-group">
-        <label class="control-label" for="entries">Notes</label>
+        <label class="control-label" for="entries">{{ _('Notes') }}</label>
             <div class="controls">
                 <textarea rows="15" readonly class="input-block-level" name="notes" id="notes">{{ diary_entries[0].notes }}</textarea>
             </div>
