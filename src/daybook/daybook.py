@@ -19,9 +19,11 @@ from datetime import datetime
 from functools import wraps
 
 LANGUAGES = {
+    'ca': 'Catalan',
     'en': 'English',
     'es': 'Español',
-    'fi': 'Finnish'
+    'fi': 'Finnish',
+    'it': 'Italian'
 }
 
 def setlocale(f):
