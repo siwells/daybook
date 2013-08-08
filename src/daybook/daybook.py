@@ -178,14 +178,14 @@ def settings():
             pw2 = request.form['new_pass_two']
             print pw1, pw2
             if pw1 == pw2:
-                msg = "Your password has been updated"
+                msg = gettext("Your password has been updated")
             else:
-                msg = "Please ensure that your new passwords match"
+                msg = gettext("Please ensure that your new passwords match")
             flash(msg)
         
         elif button == 'update_lang_button':
             print "lang"
-            msg = "Your default language settings have been updated"
+            msg = gettext("Your default language settings have been updated")
             flash(msg)
 
     return render_template('settings.html')
