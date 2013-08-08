@@ -17,12 +17,12 @@
 
 {% endblock %}
 
-{% block title%}Add a new entry{% endblock %}
+{% block title%}{{ _('Add a new entry') }}{% endblock %}
 
 {% block content %}
     
     <div class="page-header">
-    <h1>Your Journey Diary <small>Add a new entry</small></h1>
+    <h1>{{ _('Your Journey Diary') }} <small>{{ _('Add a new entry') }}</small></h1>
     </div>
     
   <div class="row">
@@ -34,44 +34,44 @@
     <div class="control-group">
 
 	
-	<legend>Overview of your journey</legend>
+	<legend>{{ _('Overview of your journey') }}</legend>
         <div class="control-group">
-            <label class="control-label" for="entries">Date</label>
+            <label class="control-label" for="entries">{{ _('Date') }}</label>
             <div class="controls">
-        		<input class="input-block-level" type="text" placeholder="the date of your journey" name="date">
+        		<input class="input-block-level" type="text" placeholder="{{ _('the date of your journey')}}" name="date">
 			</div>
         </div>
 
         <div class="control-group">
-            <label class="control-label" for="time">Time</label>
+            <label class="control-label" for="time">{{ _('Time') }}</label>
             <div class="controls">
-        		<input class="input-block-level" type="text" placeholder="the time of your journey" name="time">
+        		<input class="input-block-level" type="text" placeholder="{{ _('the time of your journey') }}" name="time">
 			</div>
         </div>
 
         <div class="control-group">
-            <label class="control-label" for="entries">Origin</label>
+            <label class="control-label" for="entries">{{ _('Origin') }}</label>
             <div class="controls">
-           		<input class="input-block-level" type="text" placeholder="where your journey started" name="origin">    
+           		<input class="input-block-level" type="text" placeholder="{{ _('where your journey started') }}" name="origin">    
 			</div>
         </div>
 
         <div class="control-group">
-            <label class="control-label" for="entries">Destination</label>
+            <label class="control-label" for="entries">{{ _('Destination') }}</label>
             <div class="controls">
-            	<input class="input-block-level" type="text" placeholder="where your journey ended" name="destination">
+            	<input class="input-block-level" type="text" placeholder="{{ _('where your journey ended') }}" name="destination">
 			</div>
         </div>
 
         <div class="control-group">
-            <label class="control-label" for="duration">Duration (Minutes)</label>
+            <label class="control-label" for="duration">{{ _('Duration (Minutes)') }}</label>
             <div class="controls">
-            	<input class="input-block-level" type="text" placeholder="how long your journey lasted overall" name="duration">
+            	<input class="input-block-level" type="text" placeholder="{{ _('how long your journey lasted overall') }}" name="duration">
 			</div>
         </div>
 
 		<div class="control-group">
-        <label class="control-label" for="overall_rating">Rate your journey overall</label>
+        <label class="control-label" for="overall_rating">{{ _('Rate your journey overall') }}</label>
 			<div class="input-append">
             	<div class="controls">
                 	<select class="input-small" name="overall_rating">
@@ -87,50 +87,50 @@
         </div>
 
 
-	<legend>Journey Legs</legend>
+	<legend>{{ _('Journey Legs') }}</legend>
 
 		<div class="control-group">
 	        <div class="controls">
-	        	<button class="btn btn-block" type="button" onClick="addInput('dynamicInput');">Add a journey leg</button>
+	        	<button class="btn btn-block" type="button" onClick="addInput('dynamicInput');">{{ _('Add a journey leg') }}</button>
 			</div>
 		</div>
 
 		<div class="offset1" id="dynamicInput">
-			<legend>Leg 1</legend>
+			<legend>{{ _('Leg 1') }}</legend>
 				<div class="control-group">
-		        	<label class="control-label" for="entries">Travel Mode for this leg</label>
+		        	<label class="control-label" for="entries">{{ _('Travel Mode for this leg') }}</label>
 		            <div class="controls">
 	    	            <select class="input input-block-level" name="mode_1">
-	        	            <option>Bicycle</option>
-                            <option>Bicycle Share</option>
-    	        	        <option>Car</option>
-                            <option>Car Share</option>
-                            <option>Ferry</option>
-                            <option>Metro</option>
-                            <option>Moped</option>
-                            <option>Motorbike</option>
-                            <option>Taxi</option>
-                            <option>Taxi Share</option>
-                            <option>Train</option>
-                            <option>Tram</option>
-                            <option>Trolleybus</option>
-        	        	    <option>Walk</option>
-                            <option>Other</option>
+	        	            <option>{{ _('Bicycle') }}</option>
+                            <option>{{ _('Bicycle Share') }}</option>
+    	        	        <option>{{ _('Car') }}</option>
+                            <option>{{ _('Car Share') }}</option>
+                            <option>{{ _('Ferry') }}</option>
+                            <option>{{ _('Metro') }}</option>
+                            <option>{{ _('Moped') }}</option>
+                            <option>{{ _('Motorbike') }}</option>
+                            <option>{{ _('Taxi') }}</option>
+                            <option>{{ _('Taxi Share') }}</option>
+                            <option>{{ _('Train') }}</option>
+                            <option>{{ _('Tram') }}</option>
+                            <option>{{ _('Trolleybus') }}</option>
+        	        	    <option>{{ _('Walk') }}</option>
+                            <option>{{ _('Other') }}</option>
 	        	        </select>
     	        	</div>
 		        </div> 
 
                 
                 <div class="control-group">
-                    <label class="control-label" for="leg_duration_1">Duration (Minutes)</label>
+                    <label class="control-label" for="leg_duration_1">{{ _('Duration (Minutes)') }}</label>
                     <div class="controls">
-            	        <input class="input-block-level" type="text" placeholder="how long this leg lasted" name="leg_duration_1">
+            	        <input class="input-block-level" type="text" placeholder="{{ _('how long this leg lasted') }}" name="leg_duration_1">
 			        </div>
                 </div>
 
 
 	       		<div class="control-group">
-    	        	<label class="control-label" for="rating_1">Rating for this leg</label>
+    	        	<label class="control-label" for="rating_1">{{ _('Rating for this leg') }}</label>
 	    	        <div class="input-append">
     	    	    	<div class="controls">
         	    	    	<select class="input-small" name="rating_1">
@@ -149,16 +149,16 @@
 		</div>
 
 
-	<legend>Notes</legend>
+	<legend>{{ _('Notes') }}</legend>
 		<div class="control-group">
-        	<label class="control-label" for="entries">Notes about your journey</label>
+        	<label class="control-label" for="entries">{{ _('Notes about your journey') }}</label>
 	        <div class="controls">
 				<textarea rows="15" class="input-block-level" name="notes"></textarea>
         	</div>
 	    </div>
 
 		<div class="control-group">
-    	    <label class="control-label" for="entries">Add this entry to your journey diary</label>
+    	    <label class="control-label" for="entries">{{ _('Add this entry to your journey diary') }}</label>
         	<div class="controls">
 				<button class="btn btn-large btn-primary pull-right" type="submit"  type="submit" name="button" value="login">Add Entry</button>
 			</div>
