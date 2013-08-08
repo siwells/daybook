@@ -20,7 +20,8 @@ from functools import wraps
 
 LANGUAGES = {
     'en': 'English',
-    'es': 'Español'
+    'es': 'Español',
+    'fi': 'Finnish'
 }
 
 def setlocale(f):
