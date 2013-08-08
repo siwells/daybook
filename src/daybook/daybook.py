@@ -146,7 +146,7 @@ def recover():
         print request.method, request.path
         print request.form
 
-        msg = "An email was sent to " + request.form['email'] 
+        msg = gettext("An email was sent to {arg}").format(arg=request.form['email'])
         flash(msg)
 
         return redirect(url_for('.root'))
