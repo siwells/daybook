@@ -1,19 +1,19 @@
 {% extends "base_public.html" %}
-{% block title%}Verification{% endblock %}
+{% block title%}{{ _('Verification') }}{% endblock %}
 
 {% block hero %}
   <div class="hero-unit">
     
     <form class="form-horizontal" name="recover_password_form" action="" method="post">
             <fieldset>
-            <legend>Recover Lost Password</legend> 
+            <legend>{{ _('Recover Lost Password') }}</legend> 
 
-            <p>If you have lost your password, please type in your email address and press the 'Recover Password' button. An email will be sent to your registered account with further instructions.</a></p>
+            <p>{{ _('If you have lost your password, please type in your email address and press the 'Recover Password' button. An email will be sent to your registered account with further instructions.') }}</a></p>
             
             <div class="control-group">
                 <div class="controls">
                 <input type="text" placeholder="Email Address" name="email">
-                <button type="submit" class="btn" name="button" value="recover_password">Recover Password</button>
+                <button type="submit" class="btn" name="button" value="recover_password">{{ _('Recover Password') }}</button>
             </div>
             </div>
 
