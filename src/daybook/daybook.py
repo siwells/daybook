@@ -47,7 +47,7 @@ def root():
         print request.form
         button = request.form['button']
         if button  == 'join':
-            msg = "An email has been sent to " + request.form['email'] + " so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in."
+            msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
             flash(msg)
             return render_template('index.html')
         elif button == 'login':
