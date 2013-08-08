@@ -136,10 +136,14 @@ def diary():
 
 @app.route('/entry', methods=['GET', 'POST'])
 def entry():
-	if request.method == 'POST':
-		print request.method, request.path
-		print request.form
-	return render_template('entry.html')
+    if request.method == 'POST':
+        print request.method, request.path
+        print request.form
+        msg = gettext("Your journey entry was added to your diary")
+        flash(msg)
+        return redirect( url_for('.dashboard') )
+    
+    return render_template('entry.html')
 
 @app.route('/recover', methods=['GET', 'POST'])
 def recover():
