@@ -39,11 +39,11 @@
               <div class="nav-collapse collapse">
                 <ul class="nav">
 
-                <li class="active"><a href="{{ url_for('.dashboard')}}" rel="tooltip" title="Return to Your Journey Diary"><strong><i class="icon-home"></i> SUPERHUB Journey Diary</strong></a></li>
+                <li class="active"><a href="{{ url_for('.dashboard')}}" rel="tooltip" title="{{ _('Return to Your Journey Diary') }}"><strong><i class="icon-home"></i> {{ _('SUPERHUB Journey Diary') }}</strong></a></li>
                 
-                <li><a href="{{ url_for('.diary') }}">View Diary Entries</a></li>
+                <li><a href="{{ url_for('.diary') }}">{{ _('View Diary Entries') }}</a></li>
                 
-                <li><a href="{{ url_for('.entry') }}">Add New Diary Entry</a></li>
+                <li><a href="{{ url_for('.entry') }}">{{ _('Add New Diary Entry') }}</a></li>
                                 
                 </ul>
 
@@ -54,8 +54,8 @@
 				</a>
 
 				<ul class="dropdown-menu">
-					<li><a tabindex="-1" href="{{ url_for('.settings') }}">Settings</a></li>
-					<li><a tabindex="-1" href="{{ url_for('.logout') }}">Sign out</a></li>
+					<li><a tabindex="-1" href="{{ url_for('.settings') }}">{{ _('Settings') }}</a></li>
+					<li><a tabindex="-1" href="{{ url_for('.logout') }}">{{ _('Sign out') }}</a></li>
 				</ul>
 			</div>
 
