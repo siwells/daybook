@@ -21,6 +21,7 @@ from functools import wraps
 LANGUAGES = {
     'ca': 'Catalan',
     'en': 'English',
+    'de': 'Deutsch',
     'es': 'Español',
     'fi': 'Finnish',
     'it': 'Italian'
