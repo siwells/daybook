@@ -15,8 +15,14 @@
     <div class="row">
 
         <div class="span8 offset2">   
-    
-            <p>You have made the following journey diary entries:</p>
+            
+            {% if entry_list %}
+                <p>You have made the following journey diary entries:</p>
+            {% else %}
+                <p>You have not entered any journey diary entries.</p>
+            {% endif %}
+
+            
 
             <ul class="unstyled">
 
