@@ -167,6 +167,27 @@ def logout():
 
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
+    if request.method == "POST":
+        print request.method, request.path
+        print request.form
+
+        button = request.form['button']
+        if button  == 'update_pw_button':
+            current = request.form['existing_pass']
+            pw1 = request.form['new_pass_one']
+            pw2 = request.form['new_pass_two']
+            print pw1, pw2
+            if pw1 == pw2:
+                msg = "Your password has been updated"
+            else:
+                msg = "Please ensure that your new passwords match"
+            flash(msg)
+        
+        elif button == 'update_lang_button':
+            print "lang"
+            msg = "Your default language settings have been updated"
+            flash(msg)
+
     return render_template('settings.html')
 
 @app.errorhandler(404)
