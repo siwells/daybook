@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-08-08 17:15+0100\n"
+"POT-Creation-Date: 2013-08-08 19:00+0100\n"
 "PO-Revision-Date: 2013-08-08 13:27+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fi <LL@li.org>\n"
@@ -31,6 +31,18 @@ msgstr ""
 
 #: src/daybook/daybook.py:157
 msgid "An email was sent to {arg}"
+msgstr ""
+
+#: src/daybook/daybook.py:181
+msgid "Your password has been updated"
+msgstr ""
+
+#: src/daybook/daybook.py:183
+msgid "Please ensure that your new passwords match"
+msgstr ""
+
+#: src/daybook/daybook.py:188
+msgid "Your default language settings have been updated"
 msgstr ""
 
 #: src/daybook/templates/base_private.html:42
@@ -113,6 +125,7 @@ msgid "Destination"
 msgstr ""
 
 #: src/daybook/templates/diary.html:129 src/daybook/templates/diary.html:164
+#: src/daybook/templates/entry.html:11
 msgid "Duration"
 msgstr ""
 
@@ -128,16 +141,82 @@ msgstr ""
 msgid "Select a Leg"
 msgstr ""
 
-#: src/daybook/templates/diary.html:157 src/daybook/templates/entry.html:101
+#: src/daybook/templates/diary.html:157 src/daybook/templates/entry.html:11
+#: src/daybook/templates/entry.html:101
 msgid "Travel Mode for this leg"
 msgstr ""
 
-#: src/daybook/templates/diary.html:172 src/daybook/templates/entry.html:133
+#: src/daybook/templates/diary.html:172 src/daybook/templates/entry.html:11
+#: src/daybook/templates/entry.html:133
 msgid "Rating for this leg"
 msgstr ""
 
 #: src/daybook/templates/diary.html:189 src/daybook/templates/entry.html:152
 msgid "Notes"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11
+msgid "Leg"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:104
+msgid "Bicycle"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:105
+msgid "Bicycle Share"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:106
+msgid "Car"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:107
+msgid "Car Share"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:108
+msgid "Ferry"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:109
+msgid "Metro"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:110
+msgid "Moped"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:111
+msgid "Motorbike"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:112
+msgid "Taxi"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:113
+msgid "Taxi Share"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:114
+msgid "Train"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:115
+msgid "Tram"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:116
+msgid "Trolleybus"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:117
+msgid "Walk"
+msgstr ""
+
+#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:118
+msgid "Other"
 msgstr ""
 
 #: src/daybook/templates/entry.html:20 src/daybook/templates/entry.html:25
@@ -182,66 +261,6 @@ msgstr ""
 
 #: src/daybook/templates/entry.html:99
 msgid "Leg 1"
-msgstr ""
-
-#: src/daybook/templates/entry.html:104
-msgid "Bicycle"
-msgstr ""
-
-#: src/daybook/templates/entry.html:105
-msgid "Bicycle Share"
-msgstr ""
-
-#: src/daybook/templates/entry.html:106
-msgid "Car"
-msgstr ""
-
-#: src/daybook/templates/entry.html:107
-msgid "Car Share"
-msgstr ""
-
-#: src/daybook/templates/entry.html:108
-msgid "Ferry"
-msgstr ""
-
-#: src/daybook/templates/entry.html:109
-msgid "Metro"
-msgstr ""
-
-#: src/daybook/templates/entry.html:110
-msgid "Moped"
-msgstr ""
-
-#: src/daybook/templates/entry.html:111
-msgid "Motorbike"
-msgstr ""
-
-#: src/daybook/templates/entry.html:112
-msgid "Taxi"
-msgstr ""
-
-#: src/daybook/templates/entry.html:113
-msgid "Taxi Share"
-msgstr ""
-
-#: src/daybook/templates/entry.html:114
-msgid "Train"
-msgstr ""
-
-#: src/daybook/templates/entry.html:115
-msgid "Tram"
-msgstr ""
-
-#: src/daybook/templates/entry.html:116
-msgid "Trolleybus"
-msgstr ""
-
-#: src/daybook/templates/entry.html:117
-msgid "Walk"
-msgstr ""
-
-#: src/daybook/templates/entry.html:118
-msgid "Other"
 msgstr ""
 
 #: src/daybook/templates/entry.html:127
