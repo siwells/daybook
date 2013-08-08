@@ -140,13 +140,6 @@ def entry():
 		print request.form
 	return render_template('entry.html')
 
-@app.route('/join')
-@setlocale
-def join():
-
-    return gettext('Hello') + ' Simon ' + str(datetime.now().time().strftime('%H:%M:%S'))
-    #return "JOIN"
-
 @app.route('/recover', methods=['GET', 'POST'])
 def recover():
     if request.method == 'POST':
