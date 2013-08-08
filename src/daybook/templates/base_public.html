@@ -35,7 +35,7 @@
               <div class="nav-collapse collapse">
                 <ul class="nav">
 
-                <li class="active"><a href="{{ url_for('.root')}}" rel="tooltip" title="Return to Your Journey Diary"><strong><i class="icon-home"></i> SUPERHUB Journey Diary</strong></a></li>
+                <li class="active"><a href="{{ url_for('.root')}}" rel="tooltip" title="{{ _('Go to the SUPERHUB Journey Diary homepage') }}"><strong><i class="icon-home"></i> {{ _('SUPERHUB Journey Diary') }}</strong></a></li>
                                 
                 </ul>
               </div><!-- nav-collapse -->
@@ -81,7 +81,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit text-right"><a href="{{ url_for('.recover')}}">Forgotten Password?</a></p>
+        <p class="muted credit text-right"><a href="{{ url_for('.recover')}}">{{ _('Forgotten Password?') }}</a></p>
       </div> <!-- container -->
     </div> <!-- footer -->
 </body>
