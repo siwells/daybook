@@ -1,3 +1,6 @@
+# coding: utf-8
+# as per http://www.python.org/dev/peps/pep-0263/
+
 import ConfigParser
 
 from flask import abort, Flask, flash, json, redirect, render_template, request, url_for
@@ -8,6 +11,34 @@ app = Flask(__name__)
 
 configuration.init(app)
 configuration.logs(app)
+
+from flask.ext.babel import Babel, gettext
+babel = Babel(app)
+
+from datetime import datetime
+from functools import wraps
+
+LANGUAGES = {
+    'en': 'English',
+    'es': 'Español'
+}
+
+def setlocale(f):
+    @wraps(f)
+    def new_f(*args, **kwargs):
+        lang = request.args.get('lang', None)
+        if lang is not None:
+            ctx = _request_ctx_stack.top
+            ctx.babel_locale = lang
+        return f(*args, **kwargs)
+    return new_f
+
+@babel.localeselector
+def get_locale():
+    #user = getattr(g, 'user', None)
+    #if user is not None:
+    #    return user.locale
+    return request.accept_languages.best_match(LANGUAGES.keys())
 
 @app.route('/', methods=['GET', 'POST'])
 def root():
@@ -110,8 +141,11 @@ def entry():
 	return render_template('entry.html')
 
 @app.route('/join')
+@setlocale
 def join():
-    return "JOIN"
+
+    return gettext('Hello') + ' Simon ' + str(datetime.now().time().strftime('%H:%M:%S'))
+    #return "JOIN"
 
 @app.route('/recover', methods=['GET', 'POST'])
 def recover():
