@@ -3,7 +3,7 @@
 
 import ConfigParser
 
-from flask import abort, Flask, flash, json, redirect, render_template, request, url_for
+from flask import abort, Flask, flash, json, redirect, render_template, request, url_for, _request_ctx_stack
 
 import configuration
 
