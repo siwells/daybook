@@ -17,6 +17,10 @@
 
 {% endblock %}
 
+{% block css %}
+
+{% endblock %}
+
 {% block title%}{{ _('Add a new entry') }}{% endblock %}
 
 {% block content %}
@@ -30,11 +34,11 @@
     <div class="span8 offset2">   
     
     <form class="form-horizontal" name="entry_form" action="" method="post">
-   <!-- <fieldset>-->
     <div class="control-group">
 
 	
 	<legend>{{ _('Overview of your journey') }}</legend>
+
         <div class="control-group">
             <label class="control-label" for="entries">{{ _('Date') }}</label>
             <div class="controls">
@@ -72,9 +76,10 @@
 
 		<div class="control-group">
         <label class="control-label" for="overall_rating">{{ _('Rate your journey overall') }}</label>
-			<div class="input-append">
-            	<div class="controls">
-                	<select class="input-small" name="overall_rating">
+		<div class="controls text-center">
+
+            <div class="input-append">
+            	                	<select class="input-small" name="overall_rating">
 	                    <option>1</option>
     	                <option>2</option>
         	            <option>3</option>
@@ -131,8 +136,8 @@
 
 	       		<div class="control-group">
     	        	<label class="control-label" for="rating_1">{{ _('Rating for this leg') }}</label>
-	    	        <div class="input-append">
-    	    	    	<div class="controls">
+                        <div class="controls text-center">
+                        <div class="input-append">
         	    	    	<select class="input-small" name="rating_1">
 	        	    	        <option>1</option>
     	        	    	    <option>2</option>
@@ -163,8 +168,11 @@
 				<button class="btn btn-large btn-primary pull-right" type="submit"  type="submit" name="button" value="login">Add Entry</button>
 			</div>
 		</div>
-<!--	</fieldset>-->
 	</form>
 	</div>
   </div>
 {% endblock %}
+
+{% block endscripts %} 
+{% endblock %}
+
