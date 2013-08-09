@@ -39,19 +39,7 @@
 	
 	<legend>{{ _('Overview of your journey') }}</legend>
 
-        <div class="control-group">
-            <label class="control-label" for="entries">{{ _('Date') }}</label>
-            <div class="controls">
-        		<input class="input-block-level" type="date" placeholder="{{ _('the date of your journey, e.g. Friday 9th August 2013')}}" name="date">
-			</div>
-        </div>
 
-        <div class="control-group">
-            <label class="control-label" for="time">{{ _('Time') }}</label>
-            <div class="controls">
-        		<input class="input-block-level" type="time" placeholder="{{ _('the time of your journey, e.g. 14.52') }}" name="time">
-			</div>
-        </div>
 
         <div class="control-group">
             <label class="control-label" for="entries">{{ _('Origin') }}</label>
@@ -68,6 +56,69 @@
         </div>
 
         <div class="control-group">
+            <label class="control-label" for="entries">{{ _('Date') }}</label>
+            <div class="controls">
+        		<input class="input-block-level" type="date" placeholder="{{ _('the date of your journey, e.g. Friday 9th August 2013')}}" name="date">
+			</div>
+        </div>
+
+<div class="control-group">
+            <label class="control-label" for="time">{{ _('Departure Time') }}</label>
+            <div class="controls">
+
+        <div class="input-append">
+        <select  class="input-small" name="time_hour">
+        <option>00</option>
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>21</option>
+        <option>22</option>
+        <option>23</option>
+        </select>
+        <span class="add-on">{{ _('Hour') }}</span>
+        </div>
+
+        <div class="input-append">
+        <select  class="input-small" name="time_minute">
+        <option>00</option>
+        <option>05</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+        <option>25</option>
+        <option>30</option>
+        <option>35</option>
+        <option>40</option>
+        <option>45</option>
+        <option>50</option>
+        <option>55</option>
+        </select>
+        <span class="add-on">{{ _('Minute') }}</span>
+        </div>
+
+
+        </div>
+        </div>
+
+        <div class="control-group">
             <label class="control-label" for="duration">{{ _('Duration (Minutes)') }}</label>
             <div class="controls">
             	<input class="input-block-level" type="number" placeholder="{{ _('how long your journey lasted overall') }}" name="duration">
@@ -76,7 +127,7 @@
 
 		<div class="control-group">
         <label class="control-label" for="overall_rating">{{ _('Rate your journey overall') }}</label>
-		<div class="controls text-center">
+		<div class="controls">
 
             <div class="input-append">
             	                	<select class="input-small" name="overall_rating">
