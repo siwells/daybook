@@ -3,7 +3,7 @@
 
 import ConfigParser
 
-from flask import abort, Flask, flash, json, redirect, render_template, request, url_for, _request_ctx_stack
+from flask import abort, Flask, flash, json, jsonify, redirect, render_template, request, session, url_for, _request_ctx_stack
 
 import configuration
 
@@ -55,8 +55,15 @@ def root():
             flash(msg)
             return render_template('index.html')
         elif button == 'login':
-            #return render_template('diary.html')
             return redirect(url_for('.dashboard'))
+
+    if 'cookie_notification' not in session:
+        print "No Cookie notification in session"
+        msg = "COOKIES!!!"
+
+        return render_template('index.html', alert = msg)
+    else:
+        print "Cookie notification in session"
     return render_template('index.html')
 
 @app.route('/dashboard')
@@ -160,6 +167,12 @@ def recover():
         return redirect(url_for('.root'))
 
     return render_template('recover.html')
+
+@app.route('/cookie', methods=['POST'])
+def cookie():
+    print "cookie set"
+    reply = {'request':'ok', 'message':'Cookie set', 'payload': None}
+    return jsonify(reply)
 
 @app.route('/logout')
 def logout():
