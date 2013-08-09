@@ -61,7 +61,7 @@ def root():
 
         alertlist = [
             {
-                "msg":"This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.",
+                "msg":gettext('This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.'),
                 "type":"cookie_notification",
             }
         ]
