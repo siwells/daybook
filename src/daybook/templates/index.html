@@ -2,7 +2,7 @@
 
 {% block scripts %}
 
-    <script language="Javascript" type="text/javascript">
+    <script type="text/javascript" language="Javascript">
 
     function cookieMonster()
     {
@@ -12,6 +12,10 @@
     }
 
     </script>
+
+{% endblock %}
+
+{% block css %}
 
 {% endblock %}
 
@@ -49,35 +53,35 @@
              <div class="control-group">
                 <label class="control-label" for="first_name">{{ _('First Name') }}</label>
                 <div class="controls">
-                <input type="text" placeholder="First Name" name="first_name">
+                <input type="text" placeholder="First Name" name="first_name" required>
                 </div>
             </div>
 
             <div class="control-group">
                 <label class="control-label" for="last_name">{{ _('Last Name') }}</label>
                 <div class="controls">
-                <input type="text" placeholder="Last Name" name="last_name">
+                <input type="text" placeholder="Last Name" name="last_name" required>
                 </div>
             </div>
             
             <div class="control-group">
                 <label class="control-label" for="email">{{ _('Email') }}</label>
                 <div class="controls">
-                <input type="email" placeholder="Email Address" name="email">
+                <input type="email" placeholder="Email Address" name="email" required>
                 </div>
             </div>
             
             <div class="control-group">
                 <label class="control-label" for="password">{{ _('Password') }}</label>
                 <div class="controls">
-                <input type="password" placeholder="Password" name="password">
+                <input type="password" placeholder="Password" name="password" required>
                 </div>
             </div>
             
             <div class="control-group">
                 <label class="control-label" for="password_confirmation">{{ _('Password Confirmation') }}</label>
                 <div class="controls">
-                <input type="password" placeholder="Confirm Password" name="password_confirmation">
+                <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
                 </div>
             </div>
             
@@ -125,4 +129,11 @@
        
 
   </div>
+{% endblock %}
+
+{% block endscripts %}
+<!--    <script type="text/javascript" language="Javascript">
+        jQuery(function ($) {
+        });
+    </script>-->
 {% endblock %}
