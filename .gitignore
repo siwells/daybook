@@ -3,6 +3,7 @@ env/
 .DS_Store
 *.swp
 *.py[cod]
+*.swo
 
 # C extensions
 *.so
