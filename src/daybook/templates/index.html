@@ -4,9 +4,11 @@
 
     <script language="Javascript" type="text/javascript">
 
-    function cookiemonster()
+    function update_server(type)
     {
-        $.post('cookie');
+        console.log(type)
+        $.post('response');
+
     }
 
     </script>
@@ -17,10 +19,15 @@
 
 {% block alerts %}
     {% if alert %}
+    
+        {% for entry in alert %}
+
          <div class="alert">
-             <button type="button" class="close" data-dismiss="alert" onclick="cookiemonster();">&times;</button>
-             {{ alert }}
+             <button type="button" class="close" data-dismiss="alert" {% if "true" in entry.response %} onclick="update_server('{{ entry.type }}');"{% endif %}>&times;</button>
+             {{ entry.msg }}
          </div>
+
+         {% endfor %}
      {% endif %}
 {% endblock %}
 
