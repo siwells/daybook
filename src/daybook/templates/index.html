@@ -1,5 +1,28 @@
 {% extends "base_public.html" %}
+
+{% block scripts %}
+
+    <script language="Javascript" type="text/javascript">
+
+    function cookiemonster()
+    {
+        $.post('cookie');
+    }
+
+    </script>
+
+{% endblock %}
+
 {% block title%}{{ _('Index') }}{% endblock %}
+
+{% block alerts %}
+    {% if alert %}
+         <div class="alert">
+             <button type="button" class="close" data-dismiss="alert" onclick="cookiemonster();">&times;</button>
+             {{ alert }}
+         </div>
+     {% endif %}
+{% endblock %}
 
 {% block hero %}
   <div class="hero-unit">
