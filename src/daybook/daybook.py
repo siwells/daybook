@@ -59,9 +59,22 @@ def root():
 
     if 'cookie_notification' not in session:
         print "No Cookie notification in session"
-        msg = "COOKIES!!!"
+        #msg = "COOKIES!!!"
 
-        return render_template('index.html', alert = msg)
+        alerts = [
+            {
+                "msg":"cookie notification",
+                "type":"cookie_notification",
+                "response":"true"
+            },
+            {
+                "msg":"cookie notification",
+                "type":"cookie_notification",
+                "response":"false"
+            }
+        ]
+
+        return render_template('index.html', alert = alerts)
     else:
         print "Cookie notification in session"
     return render_template('index.html')
@@ -168,8 +181,8 @@ def recover():
 
     return render_template('recover.html')
 
-@app.route('/cookie', methods=['POST'])
-def cookie():
+@app.route('/response', methods=['POST'])
+def response():
     print "cookie set"
     reply = {'request':'ok', 'message':'Cookie set', 'payload': None}
     return jsonify(reply)
