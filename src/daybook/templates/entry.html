@@ -58,8 +58,6 @@
         <div class="control-group">
             <label class="control-label" for="entries">{{ _('Date') }}</label>
             <div class="controls">
-        		<!-- <input class="input-block-level" type="date" placeholder="{{ _('the date of your journey, e.g. Friday 9th August 2013')}}" name="date"> -->
-
 
         <div class="input-append">
         <select  class="span1" name="date_day">
@@ -100,18 +98,18 @@
 
         <div class="input-append">
         <select  class="span2" name="date_month">
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
+        <option>{{ _('January') }}</option>
+        <option>{{ _('February') }}</option>
+        <option>{{ _('March') }}</option>
+        <option>{{ _('April') }}</option>
+        <option>{{ _('May') }}</option>
+        <option>{{ _('June') }}</option>
+        <option>{{ _('July') }}</option>
+        <option>{{ _('August') }}</option>
+        <option>{{ _('September') }}</option>
+        <option>{{ _('October') }}</option>
+        <option>{{ _('November') }}</option>
+        <option>{{ _('December') }}</option>
         </select>
         <span class="add-on">{{ _('Month') }}</span>
         </div>
@@ -188,7 +186,6 @@
         <div class="control-group">
             <label class="control-label" for="duration">{{ _('Duration of journey') }}</label>
             <div class="controls">
-            <!--	<input class="input-block-level" type="number" placeholder="{{ _('how long your journey lasted overall') }}" name="duration"> -->
 
         <div class="input-append">
         <select  class="span1" name="duration_hour">
@@ -224,9 +221,6 @@
         </select>
         <span class="add-on">{{ _('Minute') }}</span>
         </div>
-
-
-
 
 			</div>
         </div>
@@ -287,7 +281,6 @@
                 <div class="control-group">
                     <label class="control-label" for="leg_duration_1">{{ _('Duration of journey') }}</label>
                     <div class="controls">
-            	        <!-- <input class="input-block-level" type="number" placeholder="{{ _('how long this leg lasted') }}" name="leg_duration_1"> -->
         <div class="input-append">
         <select  class="span1" name="leg_duration_hour_1">
         <option>00</option>
