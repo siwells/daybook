@@ -3,8 +3,15 @@
 {% block scripts %} 
 
 	<script language="Javascript" type="text/javascript">
-	
-		var counter = 1;
+		
+        jQuery(function ($) {
+            $("input").tooltip()
+            $("div").tooltip()
+
+        });
+        
+        
+        var counter = 1;
 		function addInput(divName)
 		{
             var newdiv = document.createElement('div');
@@ -44,14 +51,14 @@
         <div class="control-group">
             <label class="control-label" for="entries">{{ _('Origin') }}</label>
             <div class="controls">
-           		<input class="input-block-level" type="text" placeholder="{{ _('where your journey started') }}" name="origin">    
+           		<input class="input-block-level" data-toggle="tooltip" data-placement="right" title="{{ _('Please enter the address where your journey started. Include as much detail as possible.') }}" type="text" placeholder="{{ _('where your journey started') }}" name="origin">    
 			</div>
         </div>
 
         <div class="control-group">
             <label class="control-label" for="entries">{{ _('Destination') }}</label>
             <div class="controls">
-            	<input class="input-block-level" type="text" placeholder="{{ _('where your journey ended') }}" name="destination">
+            	<input class="input-block-level" data-toggle="tooltip" data-placement="right" title="{{ _('Please enter the address where your journey finished. Include as much detail as possible.') }}" type="text" placeholder="{{ _('where your journey ended') }}" name="destination">
 			</div>
         </div>
 
@@ -229,8 +236,8 @@
         <label class="control-label" for="overall_rating">{{ _('Rate your journey overall') }}</label>
 		<div class="controls">
 
-            <div class="input-append">
-            	                	<select class="input-small" name="overall_rating">
+            <div class="input-append" data-toggle="tooltip" data-placement="right" title="{{ _('Please select a rating for this journey overall. On this scale 1 is a low quality rating and 5 is a high quality rating.') }}">
+            	    <select class="input-small" name="overall_rating">
 	                    <option>1</option>
     	                <option>2</option>
         	            <option>3</option>
