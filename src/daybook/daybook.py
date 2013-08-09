@@ -53,28 +53,20 @@ def root():
         if button  == 'join':
             msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
             flash(msg)
-            return render_template('index.html')
         elif button == 'login':
             return redirect(url_for('.dashboard'))
 
     if 'cookie_notification' not in session:
         print "No Cookie notification in session"
-        #msg = "COOKIES!!!"
 
-        alerts = [
+        alertlist = [
             {
                 "msg":"cookie notification",
                 "type":"cookie_notification",
-                "response":"true"
-            },
-            {
-                "msg":"cookie notification",
-                "type":"cookie_notification",
-                "response":"false"
             }
         ]
 
-        return render_template('index.html', alert = alerts)
+        return render_template('index.html', alertlist = alertlist)
     else:
         print "Cookie notification in session"
     return render_template('index.html')
@@ -181,10 +173,10 @@ def recover():
 
     return render_template('recover.html')
 
-@app.route('/response', methods=['POST'])
+@app.route('/cookiestatus', methods=['POST'])
 def response():
     print "cookie set"
-    reply = {'request':'ok', 'message':'Cookie set', 'payload': None}
+    reply = {'status':'ok'}
     return jsonify(reply)
 
 @app.route('/logout')
