@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-08-09 11:27+0100\n"
+"POT-Creation-Date: 2013-08-10 11:00+0100\n"
 "PO-Revision-Date: 2013-08-08 17:14+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -25,23 +25,29 @@ msgid ""
 "confirmed your email account you will be able to log in."
 msgstr ""
 
-#: src/daybook/daybook.py:145
-msgid "Your journey entry was added to your diary"
+#: src/daybook/daybook.py:64
+msgid ""
+"This site uses cookies. By continuing to browse the site you are agreeing"
+" to our use of cookies."
 msgstr ""
 
 #: src/daybook/daybook.py:157
+msgid "Your journey entry was added to your diary"
+msgstr ""
+
+#: src/daybook/daybook.py:169
 msgid "An email was sent to {arg}"
 msgstr ""
 
-#: src/daybook/daybook.py:181
+#: src/daybook/daybook.py:199
 msgid "Your password has been updated"
 msgstr ""
 
-#: src/daybook/daybook.py:183
+#: src/daybook/daybook.py:201
 msgid "Please ensure that your new passwords match"
 msgstr ""
 
-#: src/daybook/daybook.py:188
+#: src/daybook/daybook.py:206
 msgid "Your default language settings have been updated"
 msgstr ""
 
@@ -50,7 +56,8 @@ msgid "Return to Your Journey Diary"
 msgstr ""
 
 #: src/daybook/templates/base_private.html:46
-#: src/daybook/templates/base_public.html:38 src/daybook/templates/index.html:6
+#: src/daybook/templates/base_public.html:41
+#: src/daybook/templates/index.html:40
 msgid "SUPERHUB Journey Diary"
 msgstr ""
 
@@ -70,11 +77,11 @@ msgstr ""
 msgid "Sign out"
 msgstr ""
 
-#: src/daybook/templates/base_public.html:38
+#: src/daybook/templates/base_public.html:41
 msgid "Go to the SUPERHUB Journey Diary homepage"
 msgstr ""
 
-#: src/daybook/templates/base_public.html:84
+#: src/daybook/templates/base_public.html:87
 msgid "Forgotten Password?"
 msgstr ""
 
@@ -83,7 +90,7 @@ msgid "Your Journey Diary Dashboard"
 msgstr ""
 
 #: src/daybook/templates/dashboard.html:12 src/daybook/templates/diary.html:72
-#: src/daybook/templates/diary.html:77 src/daybook/templates/entry.html:29
+#: src/daybook/templates/diary.html:77 src/daybook/templates/entry.html:36
 #: src/daybook/templates/settings.html:12
 msgid "Your Journey Diary"
 msgstr ""
@@ -108,24 +115,23 @@ msgstr ""
 msgid "Select a journey"
 msgstr ""
 
-#: src/daybook/templates/diary.html:99 src/daybook/templates/entry.html:43
+#: src/daybook/templates/diary.html:99 src/daybook/templates/entry.html:66
 msgid "Date"
 msgstr ""
 
-#: src/daybook/templates/diary.html:107 src/daybook/templates/entry.html:50
+#: src/daybook/templates/diary.html:107
 msgid "Time"
 msgstr ""
 
-#: src/daybook/templates/diary.html:115 src/daybook/templates/entry.html:57
+#: src/daybook/templates/diary.html:115 src/daybook/templates/entry.html:52
 msgid "Origin"
 msgstr ""
 
-#: src/daybook/templates/diary.html:122 src/daybook/templates/entry.html:64
+#: src/daybook/templates/diary.html:122 src/daybook/templates/entry.html:59
 msgid "Destination"
 msgstr ""
 
 #: src/daybook/templates/diary.html:129 src/daybook/templates/diary.html:167
-#: src/daybook/templates/entry.html:11
 msgid "Duration"
 msgstr ""
 
@@ -133,7 +139,7 @@ msgstr ""
 msgid "Overall Journey Rating"
 msgstr ""
 
-#: src/daybook/templates/diary.html:145 src/daybook/templates/entry.html:95
+#: src/daybook/templates/diary.html:145 src/daybook/templates/entry.html:253
 msgid "Journey Legs"
 msgstr ""
 
@@ -141,184 +147,264 @@ msgstr ""
 msgid "Select a Leg"
 msgstr ""
 
-#: src/daybook/templates/diary.html:160 src/daybook/templates/entry.html:11
-#: src/daybook/templates/entry.html:106
+#: src/daybook/templates/diary.html:160
 msgid "Travel Mode for this leg"
 msgstr ""
 
-#: src/daybook/templates/diary.html:175 src/daybook/templates/entry.html:11
-#: src/daybook/templates/entry.html:139
+#: src/daybook/templates/diary.html:175 src/daybook/templates/entry.html:18
+#: src/daybook/templates/entry.html:331
 msgid "Rating for this leg"
 msgstr ""
 
-#: src/daybook/templates/diary.html:195 src/daybook/templates/entry.html:158
+#: src/daybook/templates/diary.html:195 src/daybook/templates/entry.html:350
 msgid "Notes"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11
+#: src/daybook/templates/entry.html:18
 msgid "Leg"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:109
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:264
+msgid "Travel mode for this leg"
+msgstr ""
+
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:267
 msgid "Bicycle"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:110
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:268
 msgid "Bicycle Share"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:111
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:269
 msgid "Bus"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:112
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:270
 msgid "Car"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:113
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:271
 msgid "Car Share"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:114
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:272
 msgid "Ferry"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:115
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:273
 msgid "Metro"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:116
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:274
 msgid "Moped"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:117
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:275
 msgid "Motorbike"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:118
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:276
 msgid "Taxi"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:119
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:277
 msgid "Taxi Share"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:120
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:278
 msgid "Train"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:121
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:279
 msgid "Tram"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:122
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:280
 msgid "Trolleybus"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:123
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:281
 msgid "Walk"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:124
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:282
 msgid "Other"
 msgstr ""
 
-#: src/daybook/templates/entry.html:11 src/daybook/templates/entry.html:133
-msgid "how long this leg lasted"
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:194
+#: src/daybook/templates/entry.html:289
+msgid "Duration of journey"
 msgstr ""
 
-#: src/daybook/templates/entry.html:24 src/daybook/templates/entry.html:29
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:168
+#: src/daybook/templates/entry.html:211 src/daybook/templates/entry.html:305
+msgid "Hour"
+msgstr ""
+
+#: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:186
+#: src/daybook/templates/entry.html:229 src/daybook/templates/entry.html:323
+msgid "Minute"
+msgstr ""
+
+#: src/daybook/templates/entry.html:31 src/daybook/templates/entry.html:36
 msgid "Add a new entry"
 msgstr ""
 
-#: src/daybook/templates/entry.html:40
+#: src/daybook/templates/entry.html:47
 msgid "Overview of your journey"
 msgstr ""
 
-#: src/daybook/templates/entry.html:45
-msgid "the date of your journey, e.g. Friday 9th August 2013"
+#: src/daybook/templates/entry.html:54
+msgid ""
+"Please enter the address where your journey started. Include as much "
+"detail as possible."
 msgstr ""
 
-#: src/daybook/templates/entry.html:52
-msgid "the time of your journey, e.g. 14.52"
-msgstr ""
-
-#: src/daybook/templates/entry.html:59
+#: src/daybook/templates/entry.html:54
 msgid "where your journey started"
 msgstr ""
 
-#: src/daybook/templates/entry.html:66
+#: src/daybook/templates/entry.html:61
+msgid ""
+"Please enter the address where your journey finished. Include as much "
+"detail as possible."
+msgstr ""
+
+#: src/daybook/templates/entry.html:61
 msgid "where your journey ended"
 msgstr ""
 
-#: src/daybook/templates/entry.html:71 src/daybook/templates/entry.html:131
-msgid "Duration (Minutes)"
+#: src/daybook/templates/entry.html:103
+msgid "Day"
 msgstr ""
 
-#: src/daybook/templates/entry.html:73
-msgid "how long your journey lasted overall"
+#: src/daybook/templates/entry.html:108
+msgid "January"
 msgstr ""
 
-#: src/daybook/templates/entry.html:78
+#: src/daybook/templates/entry.html:109
+msgid "February"
+msgstr ""
+
+#: src/daybook/templates/entry.html:110
+msgid "March"
+msgstr ""
+
+#: src/daybook/templates/entry.html:111
+msgid "April"
+msgstr ""
+
+#: src/daybook/templates/entry.html:112
+msgid "May"
+msgstr ""
+
+#: src/daybook/templates/entry.html:113
+msgid "June"
+msgstr ""
+
+#: src/daybook/templates/entry.html:114
+msgid "July"
+msgstr ""
+
+#: src/daybook/templates/entry.html:115
+msgid "August"
+msgstr ""
+
+#: src/daybook/templates/entry.html:116
+msgid "September"
+msgstr ""
+
+#: src/daybook/templates/entry.html:117
+msgid "October"
+msgstr ""
+
+#: src/daybook/templates/entry.html:118
+msgid "November"
+msgstr ""
+
+#: src/daybook/templates/entry.html:119
+msgid "December"
+msgstr ""
+
+#: src/daybook/templates/entry.html:121
+msgid "Month"
+msgstr ""
+
+#: src/daybook/templates/entry.html:128
+msgid "Year"
+msgstr ""
+
+#: src/daybook/templates/entry.html:138
+msgid "Departure time"
+msgstr ""
+
+#: src/daybook/templates/entry.html:236
 msgid "Rate your journey overall"
 msgstr ""
 
-#: src/daybook/templates/entry.html:99
+#: src/daybook/templates/entry.html:239
+msgid ""
+"Please select a rating for this journey overall. On this scale 1 is a low"
+" quality rating and 5 is a high quality rating."
+msgstr ""
+
+#: src/daybook/templates/entry.html:257
 msgid "Add a journey leg"
 msgstr ""
 
-#: src/daybook/templates/entry.html:104
+#: src/daybook/templates/entry.html:262
 msgid "Leg 1"
 msgstr ""
 
-#: src/daybook/templates/entry.html:160
+#: src/daybook/templates/entry.html:352
 msgid "Notes about your journey"
 msgstr ""
 
-#: src/daybook/templates/entry.html:167
+#: src/daybook/templates/entry.html:359
 msgid "Add this entry to your journey diary"
 msgstr ""
 
-#: src/daybook/templates/index.html:2
+#: src/daybook/templates/index.html:22
 msgid "Index"
 msgstr ""
 
-#: src/daybook/templates/index.html:7
+#: src/daybook/templates/index.html:41
 msgid ""
 "SuperHub is an open platform for integrated, multi-modal, urban mobility "
 "that aims to support YOU in selecting and using ecologically sustainable "
 "transport options."
 msgstr ""
 
-#: src/daybook/templates/index.html:17 src/daybook/templates/index.html:56
+#: src/daybook/templates/index.html:51 src/daybook/templates/index.html:90
 msgid "Join"
 msgstr ""
 
-#: src/daybook/templates/index.html:20
+#: src/daybook/templates/index.html:54
 msgid "First Name"
 msgstr ""
 
-#: src/daybook/templates/index.html:27
+#: src/daybook/templates/index.html:61
 msgid "Last Name"
 msgstr ""
 
-#: src/daybook/templates/index.html:34 src/daybook/templates/index.html:74
+#: src/daybook/templates/index.html:68 src/daybook/templates/index.html:108
 msgid "Email"
 msgstr ""
 
-#: src/daybook/templates/index.html:41 src/daybook/templates/index.html:81
+#: src/daybook/templates/index.html:75 src/daybook/templates/index.html:115
 msgid "Password"
 msgstr ""
 
-#: src/daybook/templates/index.html:48
+#: src/daybook/templates/index.html:82
 msgid "Password Confirmation"
 msgstr ""
 
-#: src/daybook/templates/index.html:71
+#: src/daybook/templates/index.html:105
 msgid "Login"
 msgstr ""
 
-#: src/daybook/templates/index.html:89
+#: src/daybook/templates/index.html:123
 msgid "Sign In"
 msgstr ""
 
@@ -386,5 +472,20 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "the time of your journey"
+#~ msgstr ""
+
+#~ msgid "how long this leg lasted"
+#~ msgstr ""
+
+#~ msgid "the date of your journey, e.g. Friday 9th August 2013"
+#~ msgstr ""
+
+#~ msgid "the time of your journey, e.g. 14.52"
+#~ msgstr ""
+
+#~ msgid "Duration (Minutes)"
+#~ msgstr ""
+
+#~ msgid "how long your journey lasted overall"
 #~ msgstr ""
 
