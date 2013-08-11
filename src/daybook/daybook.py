@@ -56,19 +56,16 @@ def root():
         elif button == 'login':
             return redirect(url_for('.dashboard'))
 
-    if 'cookie_notification' not in session:
-        print "No Cookie notification in session"
-
+    cookie_status = session.get('cookie_notified', False)
+    if cookie_status is False:
         alertlist = [
             {
                 "msg":gettext('This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.'),
                 "type":"cookie_notification",
             }
         ]
-
         return render_template('index.html', alertlist = alertlist)
-    else:
-        print "Cookie notification in session"
+
     return render_template('index.html')
 
 @app.route('/dashboard')
@@ -175,7 +172,7 @@ def recover():
 
 @app.route('/cookiestatus', methods=['POST'])
 def response():
-    print "cookie set"
+    session['cookie_notified'] = True
     reply = {'status':'ok'}
     return jsonify(reply)
 
