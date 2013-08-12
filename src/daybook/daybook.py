@@ -56,8 +56,10 @@ def root():
         elif button == 'login':
             return redirect(url_for('.dashboard'))
 
-    cookie_status = session.get('cookie_notified', False)
-    if cookie_status is False:
+    try:
+        if session['cookie_notified']:
+            return render_template('index.html')
+    except KeyError:
         alertlist = [
             {
                 "msg":gettext('This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.'),
@@ -66,7 +68,7 @@ def root():
         ]
         return render_template('index.html', alertlist = alertlist)
 
-    return render_template('index.html')
+    #return render_template('index.html')
 
 @app.route('/dashboard')
 def dashboard():
