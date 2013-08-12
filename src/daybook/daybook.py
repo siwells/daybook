@@ -68,8 +68,6 @@ def root():
         ]
         return render_template('index.html', alertlist = alertlist)
 
-    #return render_template('index.html')
-
 @app.route('/dashboard')
 def dashboard():
     entry_list = [
