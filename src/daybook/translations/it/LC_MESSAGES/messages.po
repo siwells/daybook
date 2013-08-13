@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-08-10 11:00+0100\n"
+"POT-Creation-Date: 2013-08-13 23:40+0100\n"
 "PO-Revision-Date: 2013-08-08 17:13+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: it <LL@li.org>\n"
@@ -18,36 +18,68 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: src/daybook/daybook.py:54
+#: src/daybook/daybook.py:99
+msgid "SUPERHUB Project :: New Journey Diary Account"
+msgstr ""
+
+#: src/daybook/daybook.py:100
+msgid ""
+"A new SUPERHUB Journey Diary account has been created for the following "
+"email address: {kwarg}. You should now be able to log into the journey "
+"diary and record your journeys."
+msgstr ""
+
+#: src/daybook/daybook.py:105
 msgid ""
 "An email has been sent to {kwarg} so that you can verify your email "
 "address. Please follow the instructions in the email. Once you have "
 "confirmed your email account you will be able to log in."
 msgstr ""
 
-#: src/daybook/daybook.py:64
+#: src/daybook/daybook.py:107
+msgid ""
+"The supplied passwords do not match. Please ensure that you type the same"
+" password into both the password box and the confirmation box."
+msgstr ""
+
+#: src/daybook/daybook.py:122
+msgid "The supplied password was incorrect"
+msgstr ""
+
+#: src/daybook/daybook.py:134
 msgid ""
 "This site uses cookies. By continuing to browse the site you are agreeing"
 " to our use of cookies."
 msgstr ""
 
-#: src/daybook/daybook.py:157
+#: src/daybook/daybook.py:263
 msgid "Your journey entry was added to your diary"
 msgstr ""
 
-#: src/daybook/daybook.py:169
+#: src/daybook/daybook.py:278
+msgid "SUPERHUB Project :: New Password"
+msgstr ""
+
+#: src/daybook/daybook.py:279
+msgid ""
+"The password for the following email address: {email} was reset. You "
+"should now be able to log into the journey diary and record your journeys"
+" using the password: {newpass}."
+msgstr ""
+
+#: src/daybook/daybook.py:284
 msgid "An email was sent to {arg}"
 msgstr ""
 
-#: src/daybook/daybook.py:199
+#: src/daybook/daybook.py:318
 msgid "Your password has been updated"
 msgstr ""
 
-#: src/daybook/daybook.py:201
+#: src/daybook/daybook.py:320
 msgid "Please ensure that your new passwords match"
 msgstr ""
 
-#: src/daybook/daybook.py:206
+#: src/daybook/daybook.py:325
 msgid "Your default language settings have been updated"
 msgstr ""
 
@@ -406,6 +438,25 @@ msgstr ""
 
 #: src/daybook/templates/index.html:123
 msgid "Sign In"
+msgstr ""
+
+#: src/daybook/templates/recover.html:2
+msgid "Verification"
+msgstr ""
+
+#: src/daybook/templates/recover.html:9
+msgid "Recover Lost Password"
+msgstr ""
+
+#: src/daybook/templates/recover.html:11
+msgid ""
+"If you have lost your password, please type in your email address and "
+"press the \"Recover Password\" button. An email will be sent to your "
+"registered account with further instructions."
+msgstr ""
+
+#: src/daybook/templates/recover.html:16
+msgid "Recover Password"
 msgstr ""
 
 #: src/daybook/templates/settings.html:7
