@@ -81,14 +81,14 @@ def check_auth(email, password):
 def root():
     #print "lang: ", request.accept_languages.best_match(LANGUAGES.keys())
     if request.method == 'POST':
-        print request.method, request.path
-        print request.form
+#        print request.method, request.path
+#        print request.form
         button = request.form['button']
         if button  == 'join':
-            print request.form['first_name'], request.form['last_name'], request.form['email'], request.form['password'], request.form['password_confirmation']
+#            print request.form['first_name'], request.form['last_name'], request.form['email'], request.form['password'], request.form['password_confirmation']
 
             if request.form['password'] == request.form['password_confirmation']:
-                print 'Passes Match - Creating new account'
+#                print 'Passes Match - Creating new account'
                 lang = request.accept_languages.best_match(LANGUAGES.keys())
 
                 users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'], lang)
@@ -104,7 +104,7 @@ def root():
 
            
         elif button == 'login':
-            print request.form['email'], request.form['password']
+#            print request.form['email'], request.form['password']
 
             if check_auth(request.form['email'], request.form['password']):
                 session['email'] = request.form['email']
@@ -153,7 +153,7 @@ def dashboard():
     ]
 
     #print entry_list
-    print json.dumps(entry_list)
+    #print json.dumps(entry_list)
     
     return render_template('dashboard.html', entry_list = entry_list)
 
@@ -206,16 +206,16 @@ def diary():
 
     ]
     
-    print diary_entries
-    print json.dumps(diary_entries)
+#    print diary_entries
+#    print json.dumps(diary_entries)
     return render_template('diary.html', diary_entries = diary_entries, diary = json.dumps(diary_entries))
 
 @app.route('/entry', methods=['GET', 'POST'])
 @requires_login
 def entry():
     if request.method == 'POST':
-        print request.method, request.path
-        print request.form
+#        print request.method, request.path
+#        print request.form
 
         date = request.form['date_day'] +":"+ request.form['date_month'] +":"+ request.form['date_year']
         time = request.form['time_hour'] +":"+ request.form['time_minute']
@@ -255,8 +255,8 @@ def entry():
 @app.route('/recover', methods=['GET', 'POST'])
 def recover():
     if request.method == 'POST':
-        print request.method, request.path
-        print request.form
+#        print request.method, request.path
+#        print request.form
 
         msg = gettext("An email was sent to {arg}").format(arg=request.form['email'])
         flash(msg)
@@ -282,8 +282,8 @@ def logout():
 @requires_login
 def settings():
     if request.method == "POST":
-        print request.method, request.path
-        print request.form
+#        print request.method, request.path
+#        print request.form
 
         button = request.form['button']
         if button  == 'update_pw_button':
