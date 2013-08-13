@@ -100,7 +100,7 @@ def root():
                 content = gettext("A new SUPERHUB Journey Diary account has been created for the following email address: {kwarg}. You should now be able to log into the journey diary and record your journeys.").format(kwarg=request.form['email'])
 
                 mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
-                print content
+                #print content
 
                 msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
             else:
@@ -269,8 +269,17 @@ def entry():
 @app.route('/recover', methods=['GET', 'POST'])
 def recover():
     if request.method == 'POST':
-#        print request.method, request.path
-#        print request.form
+
+        # Generate New Password
+        # Store New Password
+        # Send New Password to user
+        newpass = "sekretpass"
+
+        subject = gettext("SUPERHUB Project :: New Password")
+        content = gettext("The password for the following email address: {email} was reset. You should now be able to log into the journey diary and record your journeys using the password: {newpass}.").format(email=request.form['email'], newpass=newpass)
+        print content
+
+        mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
 
         msg = gettext("An email was sent to {arg}").format(arg=request.form['email'])
         flash(msg)
