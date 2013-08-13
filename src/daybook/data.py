@@ -17,7 +17,6 @@ def get_entry_count(db, uuid):
     for row in db.view('entries/get_entries'):
         if row.key == uuid:
             count = count + 1
-
     return count
 
 def get_entry_list(db, uuid):
