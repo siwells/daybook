@@ -127,6 +127,7 @@ def root():
         return render_template('index.html', alertlist = alertlist)
 
 @app.route('/dashboard')
+@requires_login
 def dashboard():
     entry_list = [
         {
@@ -153,6 +154,7 @@ def dashboard():
     return render_template('dashboard.html', entry_list = entry_list)
 
 @app.route('/diary')
+@requires_login
 def diary():
     diary_entries = [
         {
@@ -205,6 +207,7 @@ def diary():
     return render_template('diary.html', diary_entries = diary_entries, diary = json.dumps(diary_entries))
 
 @app.route('/entry', methods=['GET', 'POST'])
+@requires_login
 def entry():
     if request.method == 'POST':
         print request.method, request.path
