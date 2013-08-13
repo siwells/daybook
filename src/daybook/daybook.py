@@ -15,9 +15,6 @@ configuration.logs(app)
 from flask.ext.babel import Babel, gettext
 babel = Babel(app)
 
-from datetime import datetime
-from functools import wraps
-
 LANGUAGES = {
     'ca': 'Catalan',
     'en': 'English',
@@ -26,6 +23,14 @@ LANGUAGES = {
     'fi': 'Finnish',
     'it': 'Italian'
 }
+
+from datetime import datetime
+from functools import wraps
+
+import user_db
+
+user_db = user_db.init_db(app.config["db_name"], app.config["db_ipaddress"] + ":" + app.config["db_port"])
+
 
 def setlocale(f):
     @wraps(f)
@@ -51,10 +56,26 @@ def root():
         print request.form
         button = request.form['button']
         if button  == 'join':
-            msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
+            print request.form['first_name'], request.form['last_name'], request.form['email'], request.form['password'], request.form['password_confirmation']
+
+            if request.form['password'] == request.form['password_confirmation']:
+                print 'Passes Match - Creating new account'
+
+                
+
+                msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
+            else:
+                msg = gettext("The supplied passwords do not match. Please ensure that you type the same password into both the password box and the confirmation box.")
+
             flash(msg)
+
+
+           
         elif button == 'login':
+            print request.form['email'], request.form['password']
+
             return redirect(url_for('.dashboard'))
+
 
     try:
         if session['cookie_notified']:
