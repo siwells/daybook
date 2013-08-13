@@ -29,7 +29,8 @@ from functools import wraps
 
 import user_db
 
-user_db = user_db.init_db(app.config["db_name"], app.config["db_ipaddress"] + ":" + app.config["db_port"])
+userdb = user_db.init_db(app.config["db_name"], app.config["db_ipaddress"] + ":" + app.config["db_port"])
+user_db.add_views(userdb)
 
 import users
 
@@ -51,6 +52,16 @@ def get_locale():
     #    return user.locale
     return request.accept_languages.best_match(LANGUAGES.keys())
 
+
+def check_auth(email, password):
+    """
+    Checks the user's email and password against the user db
+    """
+    if users.check_password(userdb, email, password):
+        return True
+    return False
+
+
 @app.route('/', methods=['GET', 'POST'])
 def root():
     if request.method == 'POST':
@@ -62,7 +73,7 @@ def root():
 
             if request.form['password'] == request.form['password_confirmation']:
                 print 'Passes Match - Creating new account'
-                users.add_user(user_db, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'])
+                users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'])
 
                 
 
@@ -77,7 +88,17 @@ def root():
         elif button == 'login':
             print request.form['email'], request.form['password']
 
-            return redirect(url_for('.dashboard'))
+            if check_auth(request.form['email'], request.form['password']):
+                session['email'] = request.form['email']
+                #session['uuid'] = users.get_uuid(g.db, session['email'])
+                session['logged_in'] = True
+                #session['is_admin'] = is_admin()
+                return redirect(request.args['next'] if 'next' in request.args else url_for('.dashboard'))
+            
+            msg = gettext("The supplied password was incorrect")
+            flash(msg)
+            return render_template('index.html')
+            #return redirect(url_for('.dashboard'))
 
 
     try:
@@ -202,6 +223,8 @@ def response():
 
 @app.route('/logout')
 def logout():
+    session['logged_in'] = False
+    session.pop('email')
     return redirect( url_for('.root') )
 
 @app.route('/settings', methods=['GET', 'POST'])
