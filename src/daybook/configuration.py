@@ -17,9 +17,13 @@ def init(app):
         app.config['ip_address'] = config.get("daybook", "ip_address")
         app.config['port'] = config.get("daybook", "port")
 
-        app.config['db_name'] = config.get("userdb", "name")
-        app.config['db_ipaddress'] = config.get("userdb", "ip_address")
-        app.config['db_port'] = config.get("userdb", "port")
+        app.config['userdb_name'] = config.get("userdb", "name")
+        app.config['userdb_ipaddress'] = config.get("userdb", "ip_address")
+        app.config['userdb_port'] = config.get("userdb", "port")
+
+        app.config['datadb_name'] = config.get("datadb", "name")
+        app.config['datadb_ipaddress'] = config.get("datadb", "ip_address")
+        app.config['datadb_port'] = config.get("datadb", "port")
 
         app.config['log_file'] = config.get("logging", "name")
         app.config['log_location'] = config.get("logging", "location")

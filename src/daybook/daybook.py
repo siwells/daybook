@@ -29,8 +29,9 @@ from functools import wraps
 
 import db
 
-userdb = db.init_db(app.config["db_name"], app.config["db_ipaddress"] + ":" + app.config["db_port"])
+userdb = db.init_db(app.config["userdb_name"], app.config["userdb_ipaddress"] + ":" + app.config["userdb_port"])
 db.add_views(userdb)
+datadb = db.init_db(app.config["datadb_name"], app.config["datadb_ipaddress"] + ":" + app.config["datadb_port"])
 
 import users
 
