@@ -32,3 +32,16 @@ def add_views(db):
         db["_design/emails"] = design_doc
     except ResourceConflict:
         pass
+        
+def entries_for_user(db):
+    """
+
+    """
+    search_fun = '''function(doc) { emit(doc.uuid, doc); }'''
+    design_doc = { 'views': { 'get_entries': { 'map': search_fun}}}
+
+    try: 
+        db["_design/entries"] = design_doc
+    except ResourceConflict:
+        pass
+
