@@ -55,4 +55,13 @@ def get_user(db, raw=True, uuid=None, email=None):
         else:
             return user_doc
 
+def get_uuid(db, email):
+    """
+    Return the users uuid given their email
+    """
+    for row in db.view('emails/get_email'):
+        if row.key == email:
+            user_doc = row.value
+            return user_doc['uuid']
+
 
