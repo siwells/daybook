@@ -52,6 +52,19 @@ def get_locale():
     #    return user.locale
     return request.accept_languages.best_match(LANGUAGES.keys())
 
+def requires_login(f):
+    """
+    Checks whether the user is logged in. If so display requested page. Otherwise redirect to index page.
+
+    Used by HTML based pages to ensure that only logged in users can access protected resources.
+    """
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        status = session.get('logged_in', False)
+        if not status:
+            return redirect(url_for('.root', next=request.path))
+        return f(*args, **kwargs)
+    return decorated
 
 def check_auth(email, password):
     """
@@ -228,6 +241,7 @@ def logout():
     return redirect( url_for('.root') )
 
 @app.route('/settings', methods=['GET', 'POST'])
+@requires_login
 def settings():
     if request.method == "POST":
         print request.method, request.path
