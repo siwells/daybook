@@ -19,3 +19,16 @@ def init_db(name, url):
         print "Failed to connect to the SUPERHUB users database. Is the CouchDB server running?"
         exit(1)
     return db
+
+def add_views(db):
+    """
+    Adds view functions to the specified db
+    """
+    
+    search_fun = '''function(doc) { emit(doc.email, doc); }'''
+    design_doc = { 'views': { 'get_email': { 'map': search_fun}}}
+    
+    try: 
+        db["_design/emails"] = design_doc
+    except ResourceConflict:
+        pass
