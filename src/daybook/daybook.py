@@ -33,6 +33,7 @@ userdb = db.init_db(app.config["userdb_name"], app.config["userdb_ipaddress"] + 
 db.add_views(userdb)
 datadb = db.init_db(app.config["datadb_name"], app.config["datadb_ipaddress"] + ":" + app.config["datadb_port"])
 
+import data
 import users
 
 
@@ -107,9 +108,8 @@ def root():
 
             if check_auth(request.form['email'], request.form['password']):
                 session['email'] = request.form['email']
-                #session['uuid'] = users.get_uuid(g.db, session['email'])
+                session['uuid'] = users.get_uuid(userdb, session['email'])
                 session['logged_in'] = True
-                #session['is_admin'] = is_admin()
                 return redirect(request.args['next'] if 'next' in request.args else url_for('.dashboard'))
             
             msg = gettext("The supplied password was incorrect")
@@ -216,6 +216,9 @@ def entry():
     if request.method == 'POST':
         print request.method, request.path
         print request.form
+
+        data.add_entry(datadb, session['uuid'], "{}")
+
         msg = gettext("Your journey entry was added to your diary")
         flash(msg)
         return redirect( url_for('.dashboard') )
@@ -245,6 +248,7 @@ def response():
 def logout():
     session['logged_in'] = False
     session.pop('email')
+    session.pop('uuid')
     return redirect( url_for('.root') )
 
 @app.route('/settings', methods=['GET', 'POST'])
