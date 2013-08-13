@@ -31,7 +31,9 @@ import db
 
 userdb = db.init_db(app.config["userdb_name"], app.config["userdb_ipaddress"] + ":" + app.config["userdb_port"])
 db.add_views(userdb)
+
 datadb = db.init_db(app.config["datadb_name"], app.config["datadb_ipaddress"] + ":" + app.config["datadb_port"])
+db.entries_for_user(datadb)
 
 import data
 import users
@@ -133,6 +135,9 @@ def root():
 @app.route('/dashboard')
 @requires_login
 def dashboard():
+    """
+    Displays a list of journey diary entries. These are supplied to the dashboard template in the following format:
+
     entry_list = [
         {
             "id": "1",
@@ -151,10 +156,9 @@ def dashboard():
             "date": "Saturday, 10th August, 2013"
         }
     ]
+    """
 
-    #print entry_list
-    #print json.dumps(entry_list)
-    
+    entry_list = data.get_entry_list(datadb, session['uuid'])    
     return render_template('dashboard.html', entry_list = entry_list)
 
 @app.route('/diary')
