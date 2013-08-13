@@ -16,6 +16,10 @@ def init(app):
         app.config['SECRET_KEY'] = config.get("daybook", "secret_key")
         app.config['ip_address'] = config.get("daybook", "ip_address")
         app.config['port'] = config.get("daybook", "port")
+        app.config['url'] = config.get("daybook", "url")
+
+        app.config['email_address'] = config.get("email", "address")
+        app.config['email_password'] = config.get("email", "password")
 
         app.config['userdb_name'] = config.get("userdb", "name")
         app.config['userdb_ipaddress'] = config.get("userdb", "ip_address")
