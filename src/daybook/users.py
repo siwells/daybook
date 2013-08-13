@@ -20,3 +20,39 @@ def add_user(db, email, password, first_name, last_name):
     tmp_doc = db[new_uuid] = user_doc
 
     return tmp_doc['_id']
+
+def check_password(db, email, password):
+    """
+    Takes in a email & password, then determines whether the password is valid
+    
+    Returns True if password is valid & False otherwise
+    """
+    doc = get_user(db, email=email)
+    print doc
+    if doc is not None:
+        salt = doc['salt']
+        pw_hash = doc['password_hash']    
+        pw_crypted = bcrypt.hashpw(password, salt)
+        if pw_hash == pw_crypted:
+            return True
+    print "No user document retrieved from " + str(db) + " for user " + email
+
+def get_user(db, raw=True, uuid=None, email=None):
+    """
+    Get the document from the DB for the user specified by either uuid (preferred) or email address. If both are supplied then the doc retrieved by uuid will be returned first.
+    """
+    user_doc = None
+    if uuid != None:
+        if uuid in db:
+            user_doc = db[uuid]
+    elif email != None:
+        for row in db.view('emails/get_email'):
+            if row.key == email:
+                user_doc = row.value
+    if user_doc is not None:
+        if raw is False:
+            return json.dumps(user_doc)
+        else:
+            return user_doc
+
+
