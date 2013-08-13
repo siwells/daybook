@@ -77,6 +77,7 @@ def check_auth(email, password):
 
 @app.route('/', methods=['GET', 'POST'])
 def root():
+    #print "lang: ", request.accept_languages.best_match(LANGUAGES.keys())
     if request.method == 'POST':
         print request.method, request.path
         print request.form
@@ -86,7 +87,9 @@ def root():
 
             if request.form['password'] == request.form['password_confirmation']:
                 print 'Passes Match - Creating new account'
-                users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'])
+                lang = request.accept_languages.best_match(LANGUAGES.keys())
+
+                users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'], lang)
 
                 
 

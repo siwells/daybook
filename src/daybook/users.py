@@ -2,7 +2,7 @@ import bcrypt
 import couchdb
 import uuid
 
-def add_user(db, email, password, first_name, last_name):
+def add_user(db, email, password, first_name, last_name, lang):
     """
     Add a user to the specified DB using the supplied information
     
@@ -15,7 +15,7 @@ def add_user(db, email, password, first_name, last_name):
 
     pw_crypted = bcrypt.hashpw(password, salt)
     
-    user_doc = { "email": email, "uuid": new_uuid, "password_hash": pw_crypted, "salt": salt, "first_name": first_name, "last_name": last_name, "verified": "false"}
+    user_doc = { "email": email, "uuid": new_uuid, "password_hash": pw_crypted, "salt": salt, "first_name": first_name, "last_name": last_name, "default_language": lang, "verified": "false"}
     
     tmp_doc = db[new_uuid] = user_doc
 
