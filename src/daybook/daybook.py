@@ -164,6 +164,9 @@ def dashboard():
 @app.route('/diary')
 @requires_login
 def diary():
+    """
+    Displays the journey diary entries. These are supplied to the diary template in the following format:
+
     diary_entries = [
         {
             "id":"1",
@@ -209,9 +212,9 @@ def diary():
         }
 
     ]
+    """
     
-#    print diary_entries
-#    print json.dumps(diary_entries)
+    diary_entries = data.get_entries(datadb, session['uuid'])
     return render_template('diary.html', diary_entries = diary_entries, diary = json.dumps(diary_entries))
 
 @app.route('/entry', methods=['GET', 'POST'])
@@ -245,8 +248,10 @@ def entry():
                 legs.append(leg)
 
                 current_leg = current_leg + 1
-       
-        entry = {"origin": request.form['origin'], "destination": request.form['destination'], "overall_rating": request.form['overall_rating'], "notes": request.form['notes'], "date": date, "time": time, "duration": duration, "legs": legs}
+        
+        idx = data.get_entry_count(datadb, session['uuid'])
+
+        entry = {"id": str(idx + 1), "origin": request.form['origin'], "destination": request.form['destination'], "overall_rating": request.form['overall_rating'], "notes": request.form['notes'], "date": date, "time": time, "duration": duration, "legs": legs}
 
         data.add_entry(datadb, session['uuid'], entry)
 
