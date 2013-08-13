@@ -31,6 +31,8 @@ import user_db
 
 user_db = user_db.init_db(app.config["db_name"], app.config["db_ipaddress"] + ":" + app.config["db_port"])
 
+import users
+
 
 def setlocale(f):
     @wraps(f)
@@ -60,6 +62,7 @@ def root():
 
             if request.form['password'] == request.form['password_confirmation']:
                 print 'Passes Match - Creating new account'
+                users.add_user(user_db, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'])
 
                 
 
