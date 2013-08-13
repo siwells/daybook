@@ -27,10 +27,10 @@ LANGUAGES = {
 from datetime import datetime
 from functools import wraps
 
-import user_db
+import db
 
-userdb = user_db.init_db(app.config["db_name"], app.config["db_ipaddress"] + ":" + app.config["db_port"])
-user_db.add_views(userdb)
+userdb = db.init_db(app.config["db_name"], app.config["db_ipaddress"] + ":" + app.config["db_port"])
+db.add_views(userdb)
 
 import users
 
