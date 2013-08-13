@@ -16,6 +16,11 @@ def init(app):
         app.config['SECRET_KEY'] = config.get("daybook", "secret_key")
         app.config['ip_address'] = config.get("daybook", "ip_address")
         app.config['port'] = config.get("daybook", "port")
+
+        app.config['db_name'] = config.get("db", "name")
+        app.config['db_ipaddress'] = config.get("db", "ip_address")
+        app.config['db_port'] = config.get("db", "port")
+
         app.config['log_file'] = config.get("logging", "name")
         app.config['log_location'] = config.get("logging", "location")
         app.config['log_level'] = config.get("logging", "level")
