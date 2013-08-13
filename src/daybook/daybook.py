@@ -217,7 +217,34 @@ def entry():
         print request.method, request.path
         print request.form
 
-        data.add_entry(datadb, session['uuid'], "{}")
+        date = request.form['date_day'] +":"+ request.form['date_month'] +":"+ request.form['date_year']
+        time = request.form['time_hour'] +":"+ request.form['time_minute']
+        duration = request.form['duration_hour'] +":"+ request.form['duration_minute']
+
+        current_leg = 1
+        morelegs = True
+        legs = []
+
+        while morelegs is True:
+            mode_str = "mode_"+str(current_leg)
+            rating_str = "rating_"+str(current_leg)
+            hour_str = "leg_duration_hour_"+str(current_leg)
+            min_str = "leg_duration_minute_"+str(current_leg)
+
+            leg_mode = request.form.get(mode_str, False)
+            if leg_mode is False:
+                morelegs = False
+            else:
+                leg_duration = request.form[hour_str] +":"+ request.form[min_str]
+
+                leg = {"rating": request.form[rating_str], "mode": leg_mode, "duration": leg_duration, "no": current_leg}
+                legs.append(leg)
+
+                current_leg = current_leg + 1
+       
+        entry = {"origin": request.form['origin'], "destination": request.form['destination'], "overall_rating": request.form['overall_rating'], "notes": request.form['notes'], "date": date, "time": time, "duration": duration, "legs": legs}
+
+        data.add_entry(datadb, session['uuid'], entry)
 
         msg = gettext("Your journey entry was added to your diary")
         flash(msg)
