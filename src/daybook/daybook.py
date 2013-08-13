@@ -36,6 +36,7 @@ datadb = db.init_db(app.config["datadb_name"], app.config["datadb_ipaddress"] + 
 db.entries_for_user(datadb)
 
 import data
+import mail
 import users
 
 
@@ -94,8 +95,12 @@ def root():
                 lang = request.accept_languages.best_match(LANGUAGES.keys())
 
                 users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'], lang)
-
                 
+                subject = gettext("SUPERHUB Project :: New Journey Diary Account")
+                content = gettext("A new SUPERHUB Journey Diary account has been created for the following email address: {kwarg}. You should now be able to log into the journey diary and record your journeys.").format(kwarg=request.form['email'])
+
+                mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
+                print content
 
                 msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
             else:
