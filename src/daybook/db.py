@@ -1,3 +1,6 @@
+# coding: utf-8
+# as per http://www.python.org/dev/peps/pep-0263/
+
 import couchdb
 
 from couchdb.http import PreconditionFailed, ResourceNotFound, ResourceConflict
