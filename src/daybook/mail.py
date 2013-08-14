@@ -11,13 +11,14 @@ from email import Encoders
 import os
 
 def send(gmail_user, gmail_pwd, to, subject, text, attach=None):
-    msg = MIMEMultipart()
+    msg = MIMEMultipart("alternative")
+    msg.set_charset("utf-8")
     
     msg['From'] = gmail_user
     msg['To'] = to
     msg['Subject'] = subject
     
-    msg.attach(MIMEText(text))
+    msg.attach(MIMEText(text, "plain", "utf-8"))
 
     if attach is not None:
         part = MIMEBase('application', 'octet-stream')
