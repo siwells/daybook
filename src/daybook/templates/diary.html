@@ -76,10 +76,12 @@
     <div class="page-header">
     <h1>{{ _('Your Journey Diary') }} <small>{{ _('Review existing entries') }}</small></h1>
     </div>
-    
+
+{% if diary_entries %}
+
   <div class="row">
     <div class="span6">   
-    
+               
     <form class="form-horizontal">
     
     <div class="control-group">
@@ -199,4 +201,9 @@
         </div>
     
   </div>
+
+{% else %}
+    <p>{{ _('You have not yet entered any journey diary entries') }}.</p>
+{% endif %}
+
 {% endblock %}
