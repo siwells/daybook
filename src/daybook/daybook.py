@@ -83,16 +83,10 @@ def check_auth(email, password):
 
 @app.route('/', methods=['GET', 'POST'])
 def root():
-    #print "lang: ", request.accept_languages.best_match(LANGUAGES.keys())
     if request.method == 'POST':
-#        print request.method, request.path
-#        print request.form
         button = request.form['button']
         if button  == 'join':
-#            print request.form['first_name'], request.form['last_name'], request.form['email'], request.form['password'], request.form['password_confirmation']
-
             if request.form['password'] == request.form['password_confirmation']:
-#                print 'Passes Match - Creating new account'
                 lang = request.accept_languages.best_match(LANGUAGES.keys())
 
                 users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'], lang)
@@ -101,19 +95,14 @@ def root():
                 content = gettext("A new SUPERHUB Journey Diary account has been created for the following email address: {kwarg}. You should now be able to log into the journey diary and record your journeys.").format(kwarg=request.form['email'])
 
                 mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
-                #print content
 
                 msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
             else:
                 msg = gettext("The supplied passwords do not match. Please ensure that you type the same password into both the password box and the confirmation box.")
 
             flash(msg)
-
-
            
         elif button == 'login':
-#            print request.form['email'], request.form['password']
-
             if check_auth(request.form['email'], request.form['password']):
                 session['email'] = request.form['email']
                 session['uuid'] = users.get_uuid(userdb, session['email'])
@@ -123,8 +112,6 @@ def root():
             msg = gettext("The supplied password was incorrect")
             flash(msg)
             return render_template('index.html')
-            #return redirect(url_for('.dashboard'))
-
 
     try:
         if session['cookie_notified']:
