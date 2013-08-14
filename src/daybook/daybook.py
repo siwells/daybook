@@ -305,19 +305,22 @@ def logout():
 @requires_login
 def settings():
     if request.method == "POST":
-#        print request.method, request.path
-#        print request.form
-
         button = request.form['button']
         if button  == 'update_pw_button':
             current = request.form['existing_pass']
-            pw1 = request.form['new_pass_one']
-            pw2 = request.form['new_pass_two']
-            print pw1, pw2
-            if pw1 == pw2:
-                msg = gettext("Your password has been updated")
+            if users.check_password(userdb, session['email'], current):
+                pw1 = request.form['new_pass_one']
+                pw2 = request.form['new_pass_two']
+                print pw1, pw2
+                if pw1 == pw2:
+                    if users.set_password(userdb, session['uuid'], pw1):
+                        msg = gettext("Your password has been updated")
+                    else:
+                        msg = gettext("Something went wrong when setting your new password. Please try again")
+                else:
+                    msg = gettext("Please ensure that your new passwords match")
             else:
-                msg = gettext("Please ensure that your new passwords match")
+                msg = gettext("Please enter you current password correctly")
             flash(msg)
         
         elif button == 'update_lang_button':
