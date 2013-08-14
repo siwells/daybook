@@ -64,4 +64,23 @@ def get_uuid(db, email):
             user_doc = row.value
             return user_doc['uuid']
 
+def set_password(db, uuid, new_pass):
+    """
+
+    """
+    doc = None
+    if uuid in db:
+        doc = db[uuid]
+        salt = doc['salt']
+        pw_hash = bcrypt.hashpw(new_pass, salt)
+        doc['password_hash'] = pw_hash
+        doc_id, rev = db.save(doc)
+
+        print "NEWPASS: "+new_pass+" hash: "+pw_hash
+
+        return True
+    else:
+        print "User "+str(uuid)+" not found in DB"
+
+
 
