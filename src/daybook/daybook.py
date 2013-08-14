@@ -37,6 +37,7 @@ db.entries_for_user(datadb)
 
 import data
 import mail
+import password
 import users
 
 
@@ -269,23 +270,21 @@ def entry():
 @app.route('/recover', methods=['GET', 'POST'])
 def recover():
     if request.method == 'POST':
+        uuid = users.get_uuid(userdb, request.form['email'])
+        if uuid is not None:
+            newpass = password.generate()
+            if users.set_password(userdb, session['uuid'], newpass):
+                subject = gettext("SUPERHUB Project :: New Password")
+                content = gettext("The password for the following email address: {email} was reset. You should now be able to log into the journey diary and record your journeys using the password: {newpass}.").format(email=request.form['email'], newpass=newpass)
+                mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
 
-        # Generate New Password
-        # Store New Password
-        # Send New Password to user
-        newpass = "sekretpass"
-
-        subject = gettext("SUPERHUB Project :: New Password")
-        content = gettext("The password for the following email address: {email} was reset. You should now be able to log into the journey diary and record your journeys using the password: {newpass}.").format(email=request.form['email'], newpass=newpass)
-        print content
-
-        mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
-
-        msg = gettext("An email was sent to {arg}").format(arg=request.form['email'])
+                msg = gettext("An email was sent to {arg}").format(arg=request.form['email'])
+            else:
+                msg = gettext("We were not able to update the password for this account. Please contact super.hub.eu@gmail.com")
+        else:
+                msg = gettext("There is no SUPERHUB account associated with the email address:")     
         flash(msg)
-
         return redirect(url_for('.root'))
-
     return render_template('recover.html')
 
 @app.route('/cookiestatus', methods=['POST'])
