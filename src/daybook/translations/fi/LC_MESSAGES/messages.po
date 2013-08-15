@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-08-14 17:38+0100\n"
-"PO-Revision-Date: 2013-08-14 18:05+0200\n"
+"PO-Revision-Date: 2013-08-15 07:24+0200\n"
 "Last-Translator: Anu Lehtiö <anu.lehtio@cs.helsinki.fi>\n"
 "Language-Team: fi <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: src/daybook/daybook.py:94
 msgid "SUPERHUB Project :: New Journey Diary Account"
@@ -24,18 +25,17 @@ msgstr "SUPERHUB -Projekti :: Uusi Matkapäiväkirjatili"
 #: src/daybook/daybook.py:95
 msgid ""
 "A new SUPERHUB Journey Diary account has been created for the following "
-"email address: {kwarg}. You should now be able to log into the journey "
-"diary and record your journeys."
+"email address: {kwarg}. You should now be able to log into the journey diary "
+"and record your journeys."
 msgstr ""
-"Uusi SUPERHUB -matkapäiväkirjatili on luotu "
-"sähköpostiosoitteelle:{kwarg}. Voit nyt kirjautua matkapäiväkirjatilille "
-"ja kirjata sinne matkatietosi"
+"Uusi SUPERHUB -matkapäiväkirjatili on luotu sähköpostiosoitteelle:{kwarg}. "
+"Voit nyt kirjautua matkapäiväkirjatilille ja kirjata sinne matkatietosi"
 
 #: src/daybook/daybook.py:99
 msgid ""
-"An email has been sent to {kwarg} so that you can verify your email "
-"address. Please follow the instructions in the email. Once you have "
-"confirmed your email account you will be able to log in."
+"An email has been sent to {kwarg} so that you can verify your email address. "
+"Please follow the instructions in the email. Once you have confirmed your "
+"email account you will be able to log in."
 msgstr ""
 "Vahvistusviesti on lähetetty sähköpostiosoitteeseen {kwarg}. Seuraa "
 "viestissä olevia ohjeita. Kun olet vahvistanut, että antamasi "
@@ -43,8 +43,8 @@ msgstr ""
 
 #: src/daybook/daybook.py:102
 msgid ""
-"The supplied passwords do not match. Please ensure that you type the same"
-" password into both the password box and the confirmation box."
+"The supplied passwords do not match. Please ensure that you type the same "
+"password into both the password box and the confirmation box."
 msgstr ""
 "Annettu salasana on väärä. Varmista, että kirjoitat saman salasanan sekä "
 "salasana- että salasanan vahvistuskenttään."
@@ -55,8 +55,8 @@ msgstr "Annettu salasana on väärä"
 
 #: src/daybook/daybook.py:123
 msgid ""
-"This site uses cookies. By continuing to browse the site you are agreeing"
-" to our use of cookies."
+"This site uses cookies. By continuing to browse the site you are agreeing to "
+"our use of cookies."
 msgstr ""
 "Tämä sivusto käyttää evästeitä. Jatkamalla sivuston käyttöä, hyväksyt "
 "evästeiden käytön."
@@ -71,13 +71,13 @@ msgstr "SUPERHUB -projekti :: Uusi Salasana"
 
 #: src/daybook/daybook.py:266
 msgid ""
-"The password for the following email address: {email} was reset. You "
-"should now be able to log into the journey diary and record your journeys"
-" using the password: {newpass}."
+"The password for the following email address: {email} was reset. You should "
+"now be able to log into the journey diary and record your journeys using the "
+"password: {newpass}."
 msgstr ""
-"Tälle sähköpostitilille:{ email} luotu salasana on poistettu käytöstä. "
-"Voit nyt kirjautua sisään ja lisätä matkatietosi käyttämällä uutta "
-"salasanaa: {newpass}."
+"Tälle sähköpostitilille:{ email} luotu salasana on poistettu käytöstä. Voit "
+"nyt kirjautua sisään ja lisätä matkatietosi käyttämällä uutta salasanaa: "
+"{newpass}."
 
 #: src/daybook/daybook.py:269
 msgid "An email was sent to {arg}"
@@ -88,10 +88,13 @@ msgid ""
 "We were not able to update the password for this account. Please contact "
 "super.hub.eu@gmail.com"
 msgstr ""
+"Emme pystyneet päivittämään tämän tilin salasanaa. Ole hyvä ja ota meihin "
+"yhteyttä lähettämällä sähköpostia osoitteeseen: super.hub.eu.@gmail.com"
 
 #: src/daybook/daybook.py:273
 msgid "There is no SUPERHUB account associated with the email address:"
 msgstr ""
+"Tähän sähköpostiosoitteeseen liittyvää SUPERHUB -tiliä ei ole olemassa."
 
 #: src/daybook/daybook.py:304
 msgid "Your password has been updated"
@@ -99,16 +102,15 @@ msgstr "Salasanasi on päivitetty"
 
 #: src/daybook/daybook.py:306
 msgid "Something went wrong when setting your new password. Please try again"
-msgstr ""
+msgstr "Jokin meni vikaan salasanasi vaihdossa. Yritä uudelleen"
 
 #: src/daybook/daybook.py:308
 msgid "Please ensure that your new passwords match"
 msgstr "Varmista, että uudet salasanasi täsmäävät"
 
 #: src/daybook/daybook.py:310
-#, fuzzy
 msgid "Please enter you current password correctly"
-msgstr "Varmista, että uudet salasanasi täsmäävät"
+msgstr "Syötä nykyinen salasanasi oikein"
 
 #: src/daybook/daybook.py:315
 msgid "Your default language settings have been updated"
@@ -325,8 +327,8 @@ msgstr "Matkan yleisnäkymä"
 
 #: src/daybook/templates/entry.html:54
 msgid ""
-"Please enter the address where your journey started. Include as much "
-"detail as possible."
+"Please enter the address where your journey started. Include as much detail "
+"as possible."
 msgstr "Lisää matkan lähtöosoite niin yksityiskohtaisesti kuin mahdollista."
 
 #: src/daybook/templates/entry.html:54
@@ -335,8 +337,8 @@ msgstr "Mistä matka alkoi"
 
 #: src/daybook/templates/entry.html:61
 msgid ""
-"Please enter the address where your journey finished. Include as much "
-"detail as possible."
+"Please enter the address where your journey finished. Include as much detail "
+"as possible."
 msgstr "Lisää matkan pääteosoite niin yksityiskohtaisesti kuin mahdollista."
 
 #: src/daybook/templates/entry.html:61
@@ -413,8 +415,8 @@ msgstr "Matkan yleisarvosana"
 
 #: src/daybook/templates/entry.html:239
 msgid ""
-"Please select a rating for this journey overall. On this scale 1 is a low"
-" quality rating and 5 is a high quality rating."
+"Please select a rating for this journey overall. On this scale 1 is a low "
+"quality rating and 5 is a high quality rating."
 msgstr ""
 "Valitse matkalle yleisarvosana. Asteikko on 1-5,  jossa 1 on huonoin "
 "arvosana ja 5 on paras arvosana."
@@ -473,7 +475,7 @@ msgstr "Sähköpostiosoite"
 
 #: src/daybook/templates/index.html:70 src/daybook/templates/recover.html:15
 msgid "Email Address"
-msgstr ""
+msgstr "Sähköpostiosoite"
 
 #: src/daybook/templates/index.html:75 src/daybook/templates/index.html:77
 #: src/daybook/templates/index.html:115 src/daybook/templates/index.html:117
@@ -485,9 +487,8 @@ msgid "Password Confirmation"
 msgstr "Salasanan vahvistus"
 
 #: src/daybook/templates/index.html:84
-#, fuzzy
 msgid "Confirm Password"
-msgstr "Hae salasana"
+msgstr "Vahvista salasana"
 
 #: src/daybook/templates/index.html:105
 msgid "Login"
@@ -507,13 +508,13 @@ msgstr "Hae unohtunut salasana"
 
 #: src/daybook/templates/recover.html:11
 msgid ""
-"If you have lost your password, please type in your email address and "
-"press the \"Recover Password\" button. An email will be sent to your "
-"registered account with further instructions."
+"If you have lost your password, please type in your email address and press "
+"the \"Recover Password\" button. An email will be sent to your registered "
+"account with further instructions."
 msgstr ""
 "Jos olet unohtanut salasanasi, anna sähköpostiosoitteesi ja paina \"HAE "
-"SALASANA\" painiketta. Tiliisi liitettyyn sähköpostiosoitteeseen "
-"lähetetään viesti, joka sisältää ohjeet salasanan palauttamiseen."
+"SALASANA\" painiketta. Tiliisi liitettyyn sähköpostiosoitteeseen lähetetään "
+"viesti, joka sisältää ohjeet salasanan palauttamiseen."
 
 #: src/daybook/templates/recover.html:16
 msgid "Recover Password"
@@ -555,7 +556,7 @@ msgstr "Toista salasana"
 
 #: src/daybook/templates/settings.html:40
 msgid "your new password again"
-msgstr ""
+msgstr "Salasanasi uudelleen"
 
 #: src/daybook/templates/settings.html:46
 msgid "Update Password"
@@ -592,4 +593,3 @@ msgstr "Espanja"
 #: src/daybook/templates/settings.html:75
 msgid "Update Language"
 msgstr "Päivitä kieliasetus"
-
