@@ -87,17 +87,23 @@ def root():
         button = request.form['button']
         if button  == 'join':
             if request.form['password'] == request.form['password_confirmation']:
-                lang = request.accept_languages.best_match(LANGUAGES.keys())
+                if users.get_uuid(userdb, request.form['email']) is not None:
+                    
+                    msg = (gettext("An account already exists for that email address. Please either use another email address or use the recover password feature."))
+                    app.logger.warn("Account already exists for "+str(request.form['email']))
+                else:
 
-                users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'], lang)
+                    lang = request.accept_languages.best_match(LANGUAGES.keys())
+
+                    users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'], lang)
                 
-                subject = gettext("SUPERHUB Project :: New Journey Diary Account")
-                content = gettext("A new SUPERHUB Journey Diary account has been created for the following email address: {kwarg}. You should now be able to log into the journey diary and record your journeys.").format(kwarg=request.form['email'])
+                    subject = gettext("SUPERHUB Project :: New Journey Diary Account")
+                    content = gettext("A new SUPERHUB Journey Diary account has been created for the following email address: {kwarg}. You should now be able to log into the journey diary and record your journeys.").format(kwarg=request.form['email'])
 
-                mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
+                    mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
 
-                msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
-                app.logger.info("NEW USER")
+                    msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
+                    app.logger.info("NEW USER")
             else:
                 msg = gettext("The supplied passwords do not match. Please ensure that you type the same password into both the password box and the confirmation box.")
 
