@@ -39,6 +39,7 @@ def send(gmail_user, gmail_pwd, to, subject, text, attach=None):
         # Should be mailServer.quit(), but that crashes...
         mailServer.close()
     except:
+        app.loggger.error("Couldn't send confirmation email: " + str(text))
         pass
 
 if __name__ == '__main__':
