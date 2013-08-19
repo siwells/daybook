@@ -29,14 +29,17 @@ def send(gmail_user, gmail_pwd, to, subject, text, attach=None):
     
     print msg
 
-    mailServer = smtplib.SMTP("smtp.gmail.com", 587)
-    mailServer.ehlo()
-    mailServer.starttls()
-    mailServer.ehlo()
-    mailServer.login(gmail_user, gmail_pwd)
-    mailServer.sendmail(gmail_user, to, msg.as_string())
-    # Should be mailServer.quit(), but that crashes...
-    mailServer.close()
+    try:
+        mailServer = smtplib.SMTP("smtp.gmail.com", 587)
+        mailServer.ehlo()
+        mailServer.starttls()
+        mailServer.ehlo()
+        mailServer.login(gmail_user, gmail_pwd)
+        mailServer.sendmail(gmail_user, to, msg.as_string())
+        # Should be mailServer.quit(), but that crashes...
+        mailServer.close()
+    except:
+        pass
 
 if __name__ == '__main__':
 
