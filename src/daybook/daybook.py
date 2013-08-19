@@ -102,7 +102,7 @@ def root():
 
                     mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
 
-                    msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. Please follow the instructions in the email. Once you have confirmed your email account you will be able to log in.").format(kwarg=request.form['email'])
+                    msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. However you can log into your account immediately.").format(kwarg=request.form['email'])
                     app.logger.info("NEW USER")
             else:
                 msg = gettext("The supplied passwords do not match. Please ensure that you type the same password into both the password box and the confirmation box.")
