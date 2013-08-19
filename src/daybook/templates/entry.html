@@ -3,6 +3,21 @@
 {% block scripts %} 
 
 	<script language="Javascript" type="text/javascript">
+
+        window.onload = function()
+        {
+            var now = new Date();
+
+            document.getElementById("date_day").value = now.getUTCDate()
+
+            months = { "1":"{{ _('January') }}", "2":"{{ _('February') }}", "3":"{{ _('March') }}", "4":"{{ _('April') }}", "5":"{{ _('May') }}", "6":"{{ _('June') }}", "7":"{{ _('July') }}", "8":"{{ _('August') }}", "9":"{{ _('September') }}", "10":"{{ _('October') }}", "11":"{{ _('November') }}", "12":"{{ _('December') }}"}
+
+            document.getElementById("date_month").value = months[now.getMonth()+1]
+            
+            document.getElementById("time_hour").value = now.getHours()
+            //document.getElementById("time_minute").value = now.getMinutes()
+
+        }
 		
         jQuery(function ($) {
             $("input").tooltip()
@@ -67,7 +82,7 @@
             <div class="controls">
 
         <div class="input-append">
-        <select  class="span1" name="date_day">
+        <select  class="span1" name="date_day" id="date_day">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -104,7 +119,7 @@
         </div>
 
         <div class="input-append">
-        <select  class="span2" name="date_month">
+        <select  class="span2" name="date_month" id="date_month">
         <option>{{ _('January') }}</option>
         <option>{{ _('February') }}</option>
         <option>{{ _('March') }}</option>
@@ -139,7 +154,7 @@
             <div class="controls">
 
         <div class="input-append">
-        <select  class="span1" name="time_hour">
+        <select  class="span1" name="time_hour" id="time_hour">
         <option>00</option>
         <option>01</option>
         <option>02</option>
@@ -169,7 +184,7 @@
         </div>
 
         <div class="input-append">
-        <select  class="span1" name="time_minute">
+        <select  class="span1" name="time_minute" id="time_minute">
         <option>00</option>
         <option>05</option>
         <option>10</option>
