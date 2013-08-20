@@ -95,7 +95,7 @@ def root():
 
                     lang = request.accept_languages.best_match(LANGUAGES.keys())
 
-                    users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'], lang)
+                    uuid = users.add_user(userdb, request.form['email'], request.form['password'], request.form['first_name'], request.form['last_name'], lang)
                 
                     subject = gettext("SUPERHUB Project :: New Journey Diary Account")
                     content = gettext("A new SUPERHUB Journey Diary account has been created for the following email address: {kwarg}. You should now be able to log into the journey diary and record your journeys.").format(kwarg=request.form['email'])
@@ -103,7 +103,9 @@ def root():
                     mail.send(app.config['email_address'], app.config['email_password'], request.form['email'], subject, content)
 
                     msg = gettext("An email has been sent to {kwarg} so that you can verify your email address. However you can log into your account immediately.").format(kwarg=request.form['email'])
-                    app.logger.info("NEW USER")
+                    
+                    logline = { 'type':'New user reqistration', 'timestamp': str(datetime.now().isoformat()), 'data': {'email': request.form['email'], 'uuid':uuid}, 'payload': None}                    
+                    app.logger.info( json.dumps(logline) )
             else:
                 msg = gettext("The supplied passwords do not match. Please ensure that you type the same password into both the password box and the confirmation box.")
 
