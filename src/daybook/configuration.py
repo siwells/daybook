@@ -44,4 +44,5 @@ def logs(app):
     file_handler.setLevel( app.config['log_level'] )
     formatter = logging.Formatter("%(levelname)s | %(asctime)s |  %(module)s | %(funcName)s | %(message)s")
     file_handler.setFormatter(formatter)
+    app.logger.setLevel( app.config['log_level'] )
     app.logger.addHandler(file_handler)
