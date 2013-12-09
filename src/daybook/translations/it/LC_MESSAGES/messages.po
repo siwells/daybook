@@ -28,7 +28,7 @@ msgstr ""
 
 #: src/daybook/daybook.py:100
 msgid "SUPERHUB Project :: New Journey Diary Account"
-msgstr "Progetto SUPERHUB :: Nuovo Account del Diario di Viaggio"
+msgstr "SUPERHUB :: it tuo diario di viaggio è stato creato"
 
 #: src/daybook/daybook.py:101
 msgid ""
@@ -36,8 +36,8 @@ msgid ""
 "email address: {kwarg}. You should now be able to log into the journey diary "
 "and record your journeys."
 msgstr ""
-"E' stato creato un nuovo account per il Diario di Viaggio di SUPERHUB per il "
-"seguente indirizzo mail: {kwarg}. Ora sarà possibile effettuare l'accesso al "
+"Il tuo Diario di Viaggio di SUPERHUB è stato creato con successo. "
+"Ti sei iscritto con il seguente indirizzo di posta elettronica: {kwarg}. Ora sarà possibile effettuare l&#39;accesso al "
 "diario di viaggio e registrare i tuoi spostamenti."
 
 #: src/daybook/daybook.py:105
@@ -45,7 +45,7 @@ msgid ""
 "An email has been sent to {kwarg} so that you can verify your email address. "
 "However you can log into your account immediately."
 msgstr ""
-"E' stata mandata una mail a {kwarg} in modo da verificare il tuo indirizzo "
+"E&#39; stata mandata una mail a {kwarg} in modo da verificare il tuo indirizzo "
 "mail. Puoi comunque accedere subito al tuo account."
 
 #: src/daybook/daybook.py:108
@@ -100,7 +100,7 @@ msgstr ""
 
 #: src/daybook/daybook.py:279
 msgid "There is no SUPERHUB account associated with the email address:"
-msgstr "Non c'è alcun account SUPERHUB associato a questo indirizzo mail:"
+msgstr "Non c&#39;è alcun account SUPERHUB associato a questo indirizzo mail:"
 
 #: src/daybook/daybook.py:310
 msgid "Your password has been updated"
@@ -109,7 +109,7 @@ msgstr "La tua password è stata aggiornata"
 #: src/daybook/daybook.py:312
 msgid "Something went wrong when setting your new password. Please try again"
 msgstr ""
-"Si sono verificati dei problemi nell'impostazione della tua nuova password. "
+"Si sono verificati dei problemi nell&#39;impostazione della tua nuova password. "
 "Ti preghiamo di provare di nuovo."
 
 #: src/daybook/daybook.py:314
@@ -182,7 +182,7 @@ msgstr "Non hai inserito alcuna voce nel tuo diario di viaggio"
 
 #: src/daybook/templates/diary.html:77
 msgid "Review existing entries"
-msgstr "Rivedi le voci esistenti"
+msgstr "Modifica le voci esistenti"
 
 #: src/daybook/templates/diary.html:90
 msgid "Select a journey"
@@ -263,7 +263,7 @@ msgstr "Automobile"
 
 #: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:271
 msgid "Car Share"
-msgstr "Condivisione dell'automobile"
+msgstr "Condivisione dell&#39;automobile"
 
 #: src/daybook/templates/entry.html:18 src/daybook/templates/entry.html:272
 msgid "Ferry"
@@ -330,14 +330,14 @@ msgstr "Aggiungi una nuova voce"
 
 #: src/daybook/templates/entry.html:47
 msgid "Overview of your journey"
-msgstr "Visione d'insieme del tuo viaggio"
+msgstr "Riepilogo del tuo viaggio"
 
 #: src/daybook/templates/entry.html:54
 msgid ""
 "Please enter the address where your journey started. Include as much detail "
 "as possible."
 msgstr ""
-"Inserisci l'indirizzo di partenza del tuo viaggio. Includi quanti più "
+"Inserisci l&#39;indirizzo di partenza del tuo viaggio. Includi quanti più "
 "dettagli possibili."
 
 #: src/daybook/templates/entry.html:54
@@ -349,7 +349,7 @@ msgid ""
 "Please enter the address where your journey finished. Include as much detail "
 "as possible."
 msgstr ""
-"Inserisci l'indirizzo di arrivo del tuo viaggio. Includi quanti più dettagli "
+"Inserisci l&#39;indirizzo di arrivo del tuo viaggio. Includi quanti più dettagli "
 "possibili."
 
 #: src/daybook/templates/entry.html:61
@@ -462,13 +462,13 @@ msgid ""
 "that aims to support YOU in selecting and using ecologically sustainable "
 "transport options."
 msgstr ""
-"Superhub è una piattaforma aperta per la mobilità urbana integrata e "
-"multimodale con lo scopo di supportarti nella selezione e nell'utilizzo di "
+"SUPERHUB è una piattaforma aperta per la mobilità urbana integrata e "
+"multimodale con lo scopo di supportarti nella selezione e nell&#39;utilizzo di "
 "opzioni di trasporto ecologicamente sostenibile."
 
 #: src/daybook/templates/index.html:51 src/daybook/templates/index.html:90
 msgid "Join"
-msgstr "Unisci"
+msgstr "Sottoscrivi"
 
 #: src/daybook/templates/index.html:54 src/daybook/templates/index.html:56
 msgid "First Name"
@@ -523,7 +523,7 @@ msgid ""
 "account with further instructions."
 msgstr ""
 "Se hai perso la tua password, digita il tuo indirizzo mail e premi il "
-"pulsante \"Recover Password\". Una mail con ulteriori istruzioni sarà "
+"pulsante \"Recupera Password\". Una mail con ulteriori istruzioni sarà "
 "inviata al tuo account registrato."
 
 #: src/daybook/templates/recover.html:16
@@ -532,11 +532,11 @@ msgstr "Recupera Password"
 
 #: src/daybook/templates/settings.html:7
 msgid "Your Journey Diary Account Settings"
-msgstr "Impostazioni dell'account del Tuo Diario di Viaggio"
+msgstr "Impostazioni dell&#39;account del Tuo Diario di Viaggio"
 
 #: src/daybook/templates/settings.html:12
 msgid "Account Settings"
-msgstr "Impostazioni dell'account"
+msgstr "Impostazioni dell&#39;account"
 
 #: src/daybook/templates/settings.html:21
 msgid "Change Your Password"
