@@ -7,4 +7,8 @@ Web-based daily diary for self-reporting during HCI studies
 Run the tests
 -------------
 
-    $ PYTHONPATH=`pwd`/src/daybook python test/daybook/daybook_test.py
+Add application src to the PYTHONPATH:
+    $ PYTHONPATH=`pwd`/src/daybook
+
+Run the tests:
+    $ python test/daybook/daybook_test.py
